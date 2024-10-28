@@ -1,5 +1,4 @@
 import "../../styles/globals.scss";
-import { Button } from "@/components/ui/button";
 
 // components/Footer.js
 const LandingPgKeyFeatures = () => {
@@ -15,7 +14,6 @@ const LandingPgKeyFeatures = () => {
         </div>
       </div>
 
-      <Button>Click me</Button>
     </div>
   );
 };
