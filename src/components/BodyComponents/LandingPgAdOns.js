@@ -1,0 +1,111 @@
+import "../../styles/globals.scss";
+
+// components/Footer.js
+const LandingPgAdOns = () => {
+  // Example array of card objects
+  const cardData = [
+    {
+      id: 1,
+      title: "Career Page Integration",
+      description:
+        "Automatically sync your job listings to your career page and attract top talent effortlessly.",
+      image: "/addons-pg-integration.svg", // Path to image
+    },
+    {
+      id: 2,
+      title: "WhatsApp Integration",
+      description:
+        "Automatically sync your job listings to your career page and attract top talent effortlessly.",
+      image: "/whatsapp-red-icon.svg",
+    },
+    {
+      id: 3,
+      title: "Member Management",
+      description:
+        "Easily manage team members, roles, and permissions to streamline collaboration on hiring.",
+      image: "/red-user-config.svg",
+    },
+    {
+      id: 4,
+      title: "Career Page Integration",
+      description:
+        "Automatically sync your job listings to your career page and attract top talent effortlessly.",
+      image: "/addons-pg-integration.svg", // Path to image
+    },
+    {
+      id: 5,
+      title: "Career Page Integration",
+      description:
+        "Automatically sync your job listings to your career page and attract top talent effortlessly.",
+      image: "/addons-pg-integration.svg", // Path to image
+    },
+    {
+      id: 6,
+      title: "Career Page Integration",
+      description:
+        "Automatically sync your job listings to your career page and attract top talent effortlessly.",
+      image: "/addons-pg-integration.svg", // Path to image
+    },
+    // Add more cards as needed
+  ];
+
+  return (
+    <div className="max-w-7xl mx-auto px-4 w-[100%] mb-[5.625rem]">
+      <div className="pt-[5rem] pb-[3.75rem]">
+        <div className="text-[2rem] font-extrabold text-center">
+          Boost Your Hiring with{" "}
+          <span className="text-theme-color">Add-Ons</span>
+        </div>
+
+        <div className="text-center text-[1rem] font-normal">
+          Enhance your hiring with powerful tools and seamless integrations.
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-[2.5rem] gap-y-[2.5rem] mx-auto px-4">
+        {cardData.map((card) => (
+          <div key={card.id} className="p-5 add-ons-cards">
+            <div className="bg-[#FDEBEF] w-[2.625rem] h-[2.625rem] mb-7 rounded-lg flex items-center justify-center content-center">
+              <img src={card.image} />
+            </div>
+            <div className="text-[1.125rem] font-extrabold leading-[1.7575rem] text-left text-[rgba(73,52,56,1)]">
+              {card.title}
+            </div>
+            <div className="text-[0.875rem] font-normal text-left text-[rgba(75,81,98,1)]">
+              {card.description}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* pricing block */}
+      <div className="pricing-block border-2 border-solid border-theme-color rounded-[1.25rem] p-[2.125rem] pr-[2.625rem] flex flex-row mt-[5.75rem] p-x-[3.3125rem]">
+        <div className="flex-shrink-0">
+          <img src="Clip path group.svg" alt="Icon" />
+        </div>
+
+        <div className="flex flex-col items-start ml-6">
+          <div className="text-[1.5rem] font-extrabold leading-[2.343rem] mb-[0.5625rem]">
+            Find the Right Plan for Your Hiring Needs
+          </div>
+
+          <div className="text-[1rem] font-normal items-start">
+            <div>
+              Explore flexible pricing options tailored to your recruitment
+              process. Get{" "}
+            </div>
+            <div className="flex">started with Hirewalks and hire smarter.</div>
+          </div>
+        </div>
+
+        <div className="ml-auto flex items-center">
+          <button className="bg-theme-color text-white px-[4.3125rem] py-[0.625rem] rounded-lg hover:bg-theme-color transition">
+            View Pricing Plans
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default LandingPgAdOns;
