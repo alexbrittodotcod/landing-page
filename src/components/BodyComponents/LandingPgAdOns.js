@@ -1,4 +1,5 @@
 import "../../styles/globals.scss";
+import "../../styles/landing-page.scss";
 
 // components/Footer.js
 const LandingPgAdOns = () => {
@@ -79,29 +80,37 @@ const LandingPgAdOns = () => {
       </div>
 
       {/* pricing block */}
-      <div className="pricing-block border-2 border-solid border-theme-color rounded-[1.25rem] p-[2.125rem] pr-[2.625rem] flex flex-row mt-[5.75rem] p-x-[3.3125rem]">
-        <div className="flex-shrink-0">
-          <img src="Clip path group.svg" alt="Icon" />
-        </div>
-
-        <div className="flex flex-col items-start ml-6">
-          <div className="text-[1.5rem] font-extrabold leading-[2.343rem] mb-[0.5625rem]">
-            Find the Right Plan for Your Hiring Needs
+      <div className="pricing-block pricing-border-gradient rounded-[1.25rem] mt-[5.75rem]">
+        <div className=" flex flex-row content w-full p-x-[3.3125rem] p-[2.125rem] pr-[2.625rem]">
+          <div className="flex-shrink-0">
+            <img src="Clip path group.svg" alt="Icon" />
           </div>
 
-          <div className="text-[1rem] font-normal items-start">
-            <div>
-              Explore flexible pricing options tailored to your recruitment
-              process. Get{" "}
+          <div className="flex flex-col items-start ml-6">
+            <div className="text-[1.5rem] text-theme-color font-extrabold leading-[2.343rem] mb-[0.5625rem]">
+              Find the Right Plan for Your Hiring Needs
             </div>
-            <div className="flex">started with Hirewalks and hire smarter.</div>
-          </div>
-        </div>
 
-        <div className="ml-auto flex items-center">
-          <button className="bg-theme-color text-white px-[4.3125rem] py-[0.625rem] rounded-lg hover:bg-theme-color transition">
-            View Pricing Plans
-          </button>
+            <div className="text-[1rem] font-normal items-start">
+              <div>
+                Explore flexible pricing options tailored to your recruitment
+                process. Get{" "}
+              </div>
+              <div className="flex text-[#493438]">
+                started with Hirewalks and hire smarter.
+              </div>
+            </div>
+          </div>
+
+          <div className="ml-auto flex items-center relative">
+            <button className="bg-theme-color text-white px-[4.3125rem] py-[0.625rem] rounded-lg hover:bg-theme-color transition">
+              View Pricing Plans
+            </button>
+
+            <div className="absolute right-[3rem]">
+              <img src="view-pricing.gif" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
