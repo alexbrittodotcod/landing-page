@@ -3,7 +3,7 @@ import "../styles/landing-page.scss";
 
 const Header = () => {
   return (
-    <div className="bg-[url('/header-bg.svg')] header-linear-bg">
+    <div className="avenir-regular bg-[url('/header-bg.svg')] header-linear-bg">
       <header className="py-[1rem]">
         <div className="flex justify-between items-center max-w-7xl mx-auto px-4 w-[100%]">
           {/* Logo */}
@@ -38,7 +38,7 @@ const Header = () => {
 
           {/* User Actions */}
           <div className="flex items-center space-x-[24px]">
-            <div className="text-theme-color font-extrabold hover:text-gray-900 cursor-pointer">
+            <div className="text-theme-color Avenir-800 hover:text-gray-900 cursor-pointer">
               Log in
             </div>
 
@@ -59,13 +59,13 @@ const Header = () => {
             </div>
           </div>
 
-          <div className="text-[2.5rem] font-extrabold leading-[3.5rem] text-left text-primary">
+          <div className="text-[2.5rem] text-[#493438] font-extrabold leading-[3.5rem] text-left whitespace-nowrap pt-[8px]">
             Supercharge Your Hiring with
             <br />
             <span className="text-theme-color">AI-Driven</span> Solutions
           </div>
 
-          <div className="pt-5 text-[1.25rem] font-normal leading-[1.9375rem] text-left text-[rgba(75,81,98,1)]">
+          <div className="pt-5 text-[1.25rem] leading-[1.9375rem] text-left text-[#4B5162]">
             Unlock hiring efficiency with Hirewalks. Find top candidates faster
             and build stronger teams effortlessly.
           </div>

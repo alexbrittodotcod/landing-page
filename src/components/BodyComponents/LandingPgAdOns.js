@@ -51,7 +51,7 @@ const LandingPgAdOns = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 w-[100%] mb-[5.625rem]">
+    <div className="avenir-regular max-w-7xl mx-auto px-4 w-[100%] mb-[5.625rem]">
       <div className="pt-[5rem] pb-[3.75rem]">
         <div className="text-[2rem] font-extrabold text-center">
           Boost Your Hiring with{" "}
@@ -81,7 +81,7 @@ const LandingPgAdOns = () => {
 
       {/* pricing block */}
       <div className="pricing-block pricing-border-gradient rounded-[1.25rem] mt-[5.75rem]">
-        <div className=" flex flex-row content w-full p-x-[3.3125rem] p-[2.125rem] pr-[2.625rem]">
+        <div className="flex flex-row flex-wrap content w-full p-x-[3.3125rem] p-[2.125rem] pr-[2.625rem]">
           <div className="flex-shrink-0">
             <img src="Clip path group.svg" alt="Icon" />
           </div>
@@ -107,7 +107,7 @@ const LandingPgAdOns = () => {
               View Pricing Plans
             </button>
 
-            <div className="absolute right-[3rem]">
+            <div className="absolute right-[3rem] top-[-5rem]">
               <img src="view-pricing.gif" />
             </div>
           </div>

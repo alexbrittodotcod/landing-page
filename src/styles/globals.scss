@@ -10,17 +10,42 @@
   }
 }
 
-@font-face {
+/* @font-face {
   font-family: "Avenir";
-  src: url("/fonts/Avenir-Medium.ttf") format("truetype"); /* Adjust the file name as necessary */
+  src: url("/fonts/Avenir-Medium.ttf") format("truetype"); 
   font-weight: normal;
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Avenir-800";
+  src: url("/fonts/Avenir-Black.ttf") format("truetype"); 
+  font-weight: normal;
+  font-style: normal;
+} */
+
+@font-face {
+  font-family: Avenir;
+  src: url('/fonts/Avenir-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: avenir-bold;
+  src: url('/fonts/Avenir-Black.ttf') format('truetype');
+}
+
+.avenir-regular {
+  font-family: 'Avenir';
+}
+
+.avenir-bold {
+  font-family: 'Avenir-bold';
+}
+
+
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: "Avenir";
 }
 
 @layer utilities {

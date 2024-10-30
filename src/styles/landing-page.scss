@@ -36,8 +36,8 @@
 }
 
 .pricing-block {
-    background: linear-gradient(91deg, #FFF7F9 0.9%, #FFF5FC 99.88%);
-    margin: 0px 3.3125rem;
+  background: linear-gradient(91deg, #fff7f9 0.9%, #fff5fc 99.88%);
+  margin: 0px 3.3125rem;
 }
 
 /* Wrapper with gradient border */
@@ -45,13 +45,38 @@
   position: relative;
   padding: 2px; /* Border thickness */
   border-radius: 20px; /* Apply the rounded corners */
-  background: linear-gradient(90.98deg, rgba(254, 29, 105, 0.5) 0.21%, rgba(242, 30, 182, 0.5) 99.31%);
+  background: linear-gradient(
+    90.98deg,
+    rgba(254, 29, 105, 0.5) 0.21%,
+    rgba(242, 30, 182, 0.5) 99.31%
+  );
 }
 
 .pricing-border-gradient .content {
-  background-color: white; /* Background color for inner content */
+  background: linear-gradient(91deg, #fff7f9 0.9%, #fff5fc 99.88%);
   border-radius: 18px; /* Match border-radius to outer wrapper */
   padding: 2.125rem 2.625rem;
 }
+
+.mirror-image {
+  transform: scaleY(-1);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.scroll {
+  display: flex;
+  width: max-content; /* Ensures the width fits the content */
+  animation: scroll 20s linear infinite;
+}
+
+
 
 

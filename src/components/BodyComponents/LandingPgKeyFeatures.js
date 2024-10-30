@@ -42,35 +42,34 @@ const LandingPgKeyFeatures = () => {
       description: "3x Faster hiring with hirewalks",
       content:
         "HireWalks AI ✨ driven algorithm matches the best skilled candidate for your job role. You will get access to unlimited resumes based on the skills.",
-      featureImg: "hr-talent-feature.svg",
+      featureImg: "hr-talent-feature.webp",
     },
     {
       title: "HR Database",
       description: "3x Faster hiring with hirewalks",
       content:
         "HireWalks AI ✨ driven algorithm matches the best skilled candidate for your job role. You will get access to unlimited resumes based on the skills.",
-      featureImg: "database-feature.svg",
+      featureImg: "database-feature.webp",
     },
     {
       title: "HR Referral Contract",
       description: "3x Faster hiring with hirewalks",
       content:
         "HireWalks AI ✨ driven algorithm matches the best skilled candidate for your job role. You will get access to unlimited resumes based on the skills.",
-      featureImg: "contract-feature.svg",
+      featureImg: "contract-feature.webp",
     },
     {
       title: "ATS (Applicant Tracking System)",
       description: "3x Faster hiring with hirewalks",
       content:
         "HireWalks AI ✨ driven algorithm matches the best skilled candidate for your job role. You will get access to unlimited resumes based on the skills.",
-      featureImg: "ats-feature.svg",
+      featureImg: "ats-feature.webp",
     },
   ];
 
   const handleTimerComplete = () => {
-    console.log(items.length, activeIndex);
     setActiveIndex((prevIndex) =>
-      prevIndex === items.length ? 0 : activeIndex + 1
+      prevIndex === items.length - 1 ? 0 : prevIndex + 1
     );
   };
 
@@ -79,7 +78,7 @@ const LandingPgKeyFeatures = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 w-[100%]">
+    <div className="avenir-regular max-w-7xl mx-auto px-4 w-[100%]">
       <div className="pt-[5rem] pb-[3.75rem]">
         <div className="text-[2rem] font-extrabold text-center">
           Explore Our <span className="text-theme-color">Key Features</span>
@@ -169,7 +168,7 @@ const LandingPgKeyFeatures = () => {
           <div className="rounded-md bg-[#F7F6F6] px-[2.8125rem] py-[0.9375rem]">
             <img
               src={items[activeIndex]?.featureImg}
-              className="w-[26.75rem] h-[20.125rem] object-center"
+              className="w-[26.75rem] h-[20.125rem] object-contain"
               alt={items[activeIndex]?.title}
             />
           </div>

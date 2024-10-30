@@ -1,9 +1,13 @@
 //import "./globals.css";
 import "../styles/globals.scss";
 import "../styles/landing-page.scss";
+import FrequentQuiz from "./BodyComponents/FrequentQuiz";
+import HiringProcess from "./BodyComponents/HiringProcess";
 import LandingPgAdOns from "./BodyComponents/LandingPgAdOns";
 import LandingPgBanner from "./BodyComponents/LandingPgBanner";
 import LandingPgKeyFeatures from "./BodyComponents/LandingPgKeyFeatures";
+import RequestDemo from "./BodyComponents/RequestDemo";
+import { FormTopBar } from "@/components/icons/form-icons";
 
 // components/Body.js
 const Body = () => {
@@ -24,19 +28,30 @@ const Body = () => {
         <LandingPgAdOns />
       </section>
 
-      <section id="services" className="bg-gray-100 p-8 w-full text-center">
-        <h2 className="text-3xl font-semibold">Our Services</h2>
-        <p className="text-md mt-2">
-          We offer web development, mobile app development, and much more.
-        </p>
+      <section id="hiring-process" className="w-full text-center">
+        <div>
+          <div className="mb-[-2px]">
+            <FormTopBar className="w-full" />
+          </div>
+
+          <div className="bg-[#131316] pt-[4.5625rem] pb-[5.625rem]">
+            <HiringProcess />
+            <RequestDemo />
+          </div>
+
+          <div className="mt-[-2px] mirror-image">
+            <FormTopBar className="w-full" />
+          </div>
+        </div>
       </section>
 
-      <section id="contact" className="bg-white p-8 w-full text-center">
-        <h2 className="text-3xl font-semibold">Get in Touch</h2>
-        <p className="text-md mt-2">
-          Feel free to contact us at any time for inquiries or support.
-        </p>
-      </section>
+       <section id="freq-quiz" className="w-full text-center">
+        <FrequentQuiz />
+       </section>
+
+      {/* <section id="contact" className="bg-white p-8 w-full text-center">
+        <RequestDemo />
+      </section> */}
     </main>
   );
 };
