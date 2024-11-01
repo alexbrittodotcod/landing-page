@@ -6,6 +6,7 @@ import { FormTopBar } from "@/components/icons/form-icons";
 
 // components/Footer.js
 const HiringProcess = () => {
+  const [selectedValue, setSelectedValue] = useState("");
   const reviewPoints = [
     {
       review:
@@ -35,9 +36,9 @@ time and resources for hiring. Everything changed when I partnered with HireWalk
 
       <div className="grid grid-cols-2 gap-[6.875rem] md:grid-cols-2 sm:grid-cols-1 items-center max-w-7xl mt-[3.75rem]">
         <div className="flex flex-col gap-[4.5rem]">
-          {reviewPoints.map((item) => {
+          {reviewPoints.map((item, index) => {
             return (
-              <div className="text-white text-left">
+              <div key={index} className="text-white text-left">
                 <div className="text-[1.125rem] leading-[1.8rem]">
                   {item.review}
                 </div>
@@ -142,6 +143,8 @@ time and resources for hiring. Everything changed when I partnered with HireWalk
               </label>
               <select
                 id="role"
+                value={selectedValue}
+                onChange={(e) => setSelectedValue(e.target.value)}
                 class="w-full px-4 py-2 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-theme-color focus:border-transparent bg-[#131316] text-white"
               >
                 <option value="" disabled selected>
