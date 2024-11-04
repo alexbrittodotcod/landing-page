@@ -1,12 +1,41 @@
+"use client";
+
 import "../styles/globals.scss";
 import "../styles/landing-page.scss";
 import Image from "next/image";
 import bannerGif from "../../public/banner-img.gif";
+import { useEffect, useState } from "react";
 
 const Header = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      if (scrollTop > 0) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <header className="py-[1rem] sticky top-0 bg-[url('/header-bg.svg')] header-linear-bg z-[999]">
+      <header
+        className={`py-[1rem] sticky top-0 z-[999] transition-all duration-300 
+        ${
+          scrolled
+            ? "bg-white shadow-lg"
+            : 'bg-[url("/header-bg.svg")] header-linear-bg'
+        }`}
+      >
         <div className="flex justify-between items-center max-w-7xl mx-auto px-4 w-[100%]">
           {/* Logo */}
           <div className="text-xl font-bold">

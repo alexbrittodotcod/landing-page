@@ -39,7 +39,7 @@ const LandingPgBanner = () => {
       </div>
 
       {/* Banner image */}
-      <div className="hidden">
+      <div>
         <Image src={bannerImg} alt="banner" />
       </div>
     </div>

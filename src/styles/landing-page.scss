@@ -81,3 +81,59 @@
   box-shadow: 0px 12px 34px 0px #2121260d, 0px 4px 6px 0px #21212614,
     0px 0px 0px 1px #1313160d, 0px 1px 1px 0px #0000000d;
 }
+
+.step-1 {
+  .step-1-red-img {
+    display: none;
+  }
+}
+
+.step-1:hover {
+  .step-1-red-img {
+    display: block;
+  }
+
+  .step-1-img {
+    display: none;
+  }
+}
+
+.step-2 {
+  .step-2-img {
+    display: block;
+  }
+
+  .step-2-red-img {
+    display: none;
+  }
+}
+
+.step-2:hover {
+  .step-2-red-img {
+    display: block;
+  }
+
+  .step-2-img {
+    display: none;
+  }
+}
+
+.step-3 {
+  .step-3-img {
+    display: block;
+  }
+
+  .step-3-red-img {
+    display: none;
+  }
+}
+
+.step-3:hover {
+  .step-3-red-img {
+    display: block;
+  }
+
+  .step-3-img {
+    display: none;
+  }
+}
