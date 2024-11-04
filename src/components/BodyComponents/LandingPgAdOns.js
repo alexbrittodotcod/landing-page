@@ -63,7 +63,7 @@ const LandingPgAdOns = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-[2.5rem] gap-y-[2.5rem] mx-auto px-4">
+      <div className="grid grid-cols-3 lg:grid-cols-2 xs:grid-cols-1 gap-x-[2.5rem] gap-y-[2.5rem] mx-auto px-4">
         {cardData.map((card) => (
           <div key={card.id} className="p-5 add-ons-cards">
             <div className="bg-[#FDEBEF] w-[2.625rem] h-[2.625rem] mb-7 rounded-lg flex items-center justify-center content-center">

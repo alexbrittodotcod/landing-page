@@ -34,8 +34,8 @@ time and resources for hiring. Everything changed when I partnered with HireWalk
         Request a <span className="text-theme-color">Demo</span>
       </div>
 
-      <div className="grid grid-cols-2 gap-[6.875rem] md:grid-cols-2 sm:grid-cols-1 items-center max-w-7xl mt-[3.75rem]">
-        <div className="flex flex-col gap-[4.5rem]">
+      <div className="grid grid-cols-2 gap-[6.875rem] lg:grid-cols-1 items-center max-w-7xl mt-[3.75rem]">
+        <div className="flex flex-col gap-[4.5rem] xl:px-[1.563rem]">
           {reviewPoints.map((item, index) => {
             return (
               <div key={index} className="text-white text-left">
@@ -74,9 +74,9 @@ time and resources for hiring. Everything changed when I partnered with HireWalk
           </div>
 
           <form>
-            <div class="mb-4">
+            <div className="mb-4">
               <label
-                for="username"
+                htmlFor="username"
                 className="flex text-[#9394A1] text-[0.875rem] leading-[1.35rem] mb-[8px]"
               >
                 Name
@@ -89,9 +89,9 @@ time and resources for hiring. Everything changed when I partnered with HireWalk
               />{" "}
             </div>
 
-            <div class="mb-4">
+            <div className="mb-4">
               <label
-                for="username"
+                htmlFor="email"
                 className="flex text-[#9394A1] text-[0.875rem] leading-[1.35rem] mb-[8px]"
               >
                 Work Email
@@ -104,9 +104,9 @@ time and resources for hiring. Everything changed when I partnered with HireWalk
               />{" "}
             </div>
 
-            <div class="mb-4">
+            <div className="mb-4">
               <label
-                for="username"
+                htmlFor="username"
                 className="flex text-[#9394A1] text-[0.875rem] leading-[1.35rem] mb-[8px]"
               >
                 Company Name
@@ -119,9 +119,9 @@ time and resources for hiring. Everything changed when I partnered with HireWalk
               />{" "}
             </div>
 
-            <div class="mb-4">
+            <div className="mb-4">
               <label
-                for="username"
+                htmlFor="username"
                 className="flex text-[#9394A1] text-[0.875rem] leading-[1.35rem] mb-[8px]"
               >
                 Phone Number
@@ -134,20 +134,20 @@ time and resources for hiring. Everything changed when I partnered with HireWalk
               />{" "}
             </div>
 
-            <div class="mb-4">
+            <div className="mb-4">
               <label
-                for="role"
-                class="flex text-[#9394A1] text-[0.875rem] leading-[1.35rem] mb-[8px]"
+                htmlFor="role"
+                className="flex text-[#9394A1] text-[0.875rem] leading-[1.35rem] mb-[8px]"
               >
                 Role
               </label>
               <select
                 id="role"
-                value={selectedValue}
+                defaultValue={selectedValue}
                 onChange={(e) => setSelectedValue(e.target.value)}
-                class="w-full px-4 py-2 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-theme-color focus:border-transparent bg-[#131316] text-white"
+                className="w-full px-4 py-2 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-theme-color focus:border-transparent bg-[#131316] text-white"
               >
-                <option value="" disabled selected>
+                <option value="" disabled>
                   Select your role
                 </option>
                 <option value="manager">Manager</option>

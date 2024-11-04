@@ -21,7 +21,7 @@ const ProgressBar = ({ onTimerComplete }) => {
     }, 500);
 
     return () => clearInterval(intervalId);
-  }, [onTimerComplete]);
+  }, [progress, onTimerComplete]);
 
   return (
     <div className="relative h-full w-[3px] bg-[#E1E1E2] mr-[1rem] overflow-hidden">
@@ -88,7 +88,7 @@ const LandingPgKeyFeatures = () => {
         </div>
       </div>
 
-      <div className="grid grid-rows-2 md:grid-rows-1 md:grid-cols-2 p-4 mx-[3.9375rem] items-center gap-[6.9375rem] bg-center-image bg-center bg-no-repeat bg-[url('/gray-hirewalks.svg')] h-[34rem]">
+      <div className="grid grid-cols-2 md:grid-cols-1 p-4 sm:p-0 xl:mx-[0rem] mx-[3.9375rem] items-center gap-[6.9375rem] xl:gap-[3rem] bg-center-image bg-center bg-no-repeat bg-[url('/gray-hirewalks.svg')] min-h-[34rem] h-['fit-content']">
         {/* Accordion tab */}
         <div>
           <div className="space-y-4">
@@ -142,7 +142,7 @@ const LandingPgKeyFeatures = () => {
                   >
                     {item.content && (
                       <div className="flex flex-col mt-[0.75rem] text-gray-700 transition-opacity duration-300">
-                        <div className="text-left text-[0.875rem] font-normal color-[#493438]">
+                        <div className="text-left text-[0.875rem] font-normal text-[#493438]">
                           {item.content}
                         </div>
                         <a

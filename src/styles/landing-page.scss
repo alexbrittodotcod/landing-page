@@ -77,6 +77,7 @@
   animation: scroll 20s linear infinite;
 }
 
-
-
-
+.accordion-tab-shadow {
+  box-shadow: 0px 12px 34px 0px #2121260d, 0px 4px 6px 0px #21212614,
+    0px 0px 0px 1px #1313160d, 0px 1px 1px 0px #0000000d;
+}

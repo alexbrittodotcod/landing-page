@@ -19,35 +19,36 @@ const Body = () => {
 
       <section
         id="about"
-        className="bg-[url('/bg-stripes.svg')] w-full text-center landing-page-box-shadow"
+        className="bg-[url('/bg-stripes.svg')] relative w-full text-center landing-page-box-shadow"
       >
         {/* 2. Key Features */}
         <LandingPgKeyFeatures />
 
         {/* 3. Hiring Adons */}
         <LandingPgAdOns />
-      </section>
 
-      <section id="hiring-process" className="w-full text-center">
-        <div>
-          <div className="mb-[-2px]">
-            <FormTopBar className="w-full" />
-          </div>
-
-          <div className="bg-[#131316] pt-[4.5625rem] pb-[5.625rem]">
-            <HiringProcess />
-            <RequestDemo />
-          </div>
-
-          <div className="mt-[-2px] mirror-image">
-            <FormTopBar className="w-full" />
-          </div>
+        <div className="absolute z-[999999] w-full bottom-[-1px]">
+          <FormTopBar className="w-full" />
         </div>
       </section>
 
-       <section id="freq-quiz" className="w-full text-center">
+      <section id="hiring-process" className="w-full text-center">
+        <div className="bg-[#131316] pt-[4.5625rem] pb-[5.625rem]">
+          <HiringProcess />
+          <RequestDemo />
+        </div>
+      </section>
+
+      <section
+        id="freq-quiz"
+        className="w-full text-center bg-[url('/bg-stripes.svg')]"
+      >
+        <div className="mt-[-2px] mirror-image">
+          <FormTopBar className="w-full" />
+        </div>
+
         <FrequentQuiz />
-       </section>
+      </section>
 
       {/* <section id="contact" className="bg-white p-8 w-full text-center">
         <RequestDemo />

@@ -16,7 +16,7 @@ const Header = () => {
           </div>
 
           {/* Navigation */}
-          <nav>
+          <nav className="lg:hidden">
             <ul className="flex space-x-6 text-gray-700">
               <li>
                 <a href="#home" className="hover:text-gray-900 transition">
@@ -59,7 +59,7 @@ const Header = () => {
             </div>
           </div>
 
-          <div className="text-[2.5rem] text-[#493438] font-extrabold leading-[3.5rem] text-left whitespace-nowrap pt-[8px]">
+          <div className="text-[2.5rem] text-[#493438] font-extrabold leading-[3.5rem] text-left xl:whitespace-normal whitespace-nowrap pt-[8px]">
             Supercharge Your Hiring with
             <br />
             <span className="text-theme-color">AI-Driven</span> Solutions
