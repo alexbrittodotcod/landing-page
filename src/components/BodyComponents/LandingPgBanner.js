@@ -1,5 +1,7 @@
 //import "./globals.css";
 import "../../styles/globals.scss";
+import Image from "next/image";
+import bannerImg from "../../../public/banner-img.svg";
 
 // components/Body.js
 const LandingPgBanner = () => {
@@ -37,8 +39,8 @@ const LandingPgBanner = () => {
       </div>
 
       {/* Banner image */}
-      <div>
-        <img src="/banner-img.svg" />
+      <div className="hidden">
+        <Image src={bannerImg} alt="banner" />
       </div>
     </div>
   );

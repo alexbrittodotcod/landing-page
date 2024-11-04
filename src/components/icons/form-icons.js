@@ -36,9 +36,9 @@ export const AccordionMinus = () => (
     <path
       d="M2 2H16"
       stroke="#1E1E1E"
-      stroke-width="2.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );

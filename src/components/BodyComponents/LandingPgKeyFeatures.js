@@ -8,19 +8,17 @@ const ProgressBar = ({ onTimerComplete }) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    // Start a 5-second timer that increments progress
     const intervalId = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(intervalId);
-          onTimerComplete();
-          return 0;
-        }
-        return prev + 2;
-      });
+      setProgress((prev) => (prev >= 100 ? 0 : prev + 2));
     }, 500);
 
     return () => clearInterval(intervalId);
+  }, []);
+
+  useEffect(() => {
+    if (progress >= 100) {
+      onTimerComplete();
+    }
   }, [progress, onTimerComplete]);
 
   return (
@@ -32,6 +30,7 @@ const ProgressBar = ({ onTimerComplete }) => {
     </div>
   );
 };
+
 
 const LandingPgKeyFeatures = () => {
   const [activeIndex, setActiveIndex] = useState(0);
