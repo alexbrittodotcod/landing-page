@@ -35,6 +35,8 @@ const ProgressBar = ({ onTimerComplete }) => {
 // Landing Page Key Features component
 const LandingPgKeyFeatures = () => {
   const [activeIndex, setActiveIndex] = useState(0); // Start with no active item
+  const [imageLoaded, setImageLoaded] = useState(false); // Track if image is loaded
+  const [imageError, setImageError] = useState(false); // Track if there is an error loading the image
 
   const items = [
     {
@@ -67,21 +69,31 @@ const LandingPgKeyFeatures = () => {
     },
   ];
 
-  // Handles when the timer completes and automatically switches the tab
   const handleTimerComplete = () => {
     setActiveIndex((prevIndex) =>
       prevIndex === items.length - 1 ? 0 : prevIndex + 1
     );
   };
 
-  // Handles when an item is hovered over or clicked
   const handleHover = (index) => {
     if (activeIndex !== index) {
-      setActiveIndex(null); // Close the current item first
+      setActiveIndex(null);
       setTimeout(() => {
-        setActiveIndex(index); // Open the next item after a delay
-      }, 300); // Adjust delay to match the closing animation
+        setActiveIndex(index);
+        setImageLoaded(false); // Reset image loaded state
+        setImageError(false); // Reset image error state
+      }, 300);
     }
+  };
+
+  // Handle image loading
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
+  // Handle image error
+  const handleImageError = () => {
+    setImageError(true);
   };
 
   return (
@@ -170,14 +182,30 @@ const LandingPgKeyFeatures = () => {
           </div>
         </div>
 
-        {/* Images container with fixed height */}
+        {/* Image container with loader or fallback */}
         <div className="px-[13px] py-[12px] shadow-[8px_8px_30px_0px_#E8395C1A] rounded-md bg-white">
           <div className="rounded-md bg-[#F7F6F6] px-[2.8125rem] py-[0.9375rem] h-[21rem] flex justify-center items-center">
-            <img
-              src={items[activeIndex]?.featureImg}
-              className="w-[26.75rem] h-[20.125rem] object-contain"
-              alt={items[activeIndex]?.title}
-            />
+            {!imageLoaded && !imageError && (
+              <div className="loader">Loading...</div> // Show loader while image loads
+            )}
+            {imageError && (
+              <img
+                src="fallback-image.png" // Fallback image when the image fails to load
+                className="w-[26.75rem] h-[20.125rem] object-contain"
+                alt="Fallback"
+              />
+            )}
+            {!imageError && (
+              <img
+                src={items[activeIndex]?.featureImg}
+                className={`w-[26.75rem] h-[20.125rem] object-contain ${
+                  !imageLoaded ? "hidden" : ""
+                }`} // Hide image until it's loaded
+                alt={items[activeIndex]?.title}
+                onLoad={handleImageLoad}
+                onError={handleImageError}
+              />
+            )}
           </div>
         </div>
       </div>
