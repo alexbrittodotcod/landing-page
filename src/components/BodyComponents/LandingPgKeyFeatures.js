@@ -35,8 +35,6 @@ const ProgressBar = ({ onTimerComplete }) => {
 // Landing Page Key Features component
 const LandingPgKeyFeatures = () => {
   const [activeIndex, setActiveIndex] = useState(0); // Start with no active item
-  const [isLoading, setIsLoading] = useState(true); // Image loading state
-  const [hasError, setHasError] = useState(false); // Image error state
 
   const items = [
     {
@@ -82,21 +80,8 @@ const LandingPgKeyFeatures = () => {
       setActiveIndex(null); // Close the current item first
       setTimeout(() => {
         setActiveIndex(index); // Open the next item after a delay
-        setIsLoading(true); // Reset loader for the new image
-        setHasError(false); // Reset error state
       }, 300); // Adjust delay to match the closing animation
     }
-  };
-
-  // Handle when the image has successfully loaded
-  const handleImageLoad = () => {
-    setIsLoading(false); // Hide loader when image is loaded
-  };
-
-  // Handle image error (when the image fails to load)
-  const handleImageError = () => {
-    setIsLoading(false); // Hide loader even if image fails
-    setHasError(true); // Set error state to true
   };
 
   return (
@@ -185,24 +170,14 @@ const LandingPgKeyFeatures = () => {
           </div>
         </div>
 
-        {/* Images container with loader and error fallback */}
+        {/* Images container with fixed height */}
         <div className="px-[13px] py-[12px] shadow-[8px_8px_30px_0px_#E8395C1A] rounded-md bg-white">
           <div className="rounded-md bg-[#F7F6F6] px-[2.8125rem] py-[0.9375rem] h-[21rem] flex justify-center items-center">
-            {isLoading && <div className="loader">Loading...</div>}{" "}
-            {/* Loader */}
-            {!hasError && (
-              <img
-                src={items[activeIndex]?.featureImg}
-                className={`w-[26.75rem] h-[20.125rem] object-contain ${
-                  isLoading ? "hidden" : "block"
-                }`}
-                alt={items[activeIndex]?.title}
-                onLoad={handleImageLoad}
-                onError={handleImageError}
-              />
-            )}
-            {hasError && <div className="error">Image failed to load</div>}{" "}
-            {/* Fallback message */}
+            <img
+              src={items[activeIndex]?.featureImg}
+              className="w-[26.75rem] h-[20.125rem] object-contain"
+              alt={items[activeIndex]?.title}
+            />
           </div>
         </div>
       </div>
