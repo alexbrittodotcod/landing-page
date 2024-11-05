@@ -2,6 +2,7 @@
 import "../styles/landing-page.scss";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Head from "next/head";
 
 export const metadata = {
   title: "Hirewalks",
@@ -15,9 +16,6 @@ export default function RootLayout({ children }) {
         {/* Meta tags for title and description */}
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
-
-        {/* Link to the favicon */}
-        <link rel="icon" href="/favicon.ico" />
       </head>
 
       <body className="flex flex-col min-h-screen">

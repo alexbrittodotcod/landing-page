@@ -27,7 +27,7 @@ const Body = () => {
         {/* 3. Hiring Adons */}
         <LandingPgAdOns />
 
-        <div className="absolute z-[999999] w-full bottom-[-1px]">
+        <div className="absolute z-[1] w-full bottom-[-1px]">
           <FormTopBar className="w-full" />
         </div>
       </section>

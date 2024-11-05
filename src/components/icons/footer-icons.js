@@ -197,3 +197,18 @@ export const WhiteInstagramIcon = () => (
     </defs>
   </svg>
 );
+
+export const WhiteTwitter = () => (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15.2745 1.58643H18.0857L11.944 8.606L19.1693 18.1581H13.512L9.08097 12.3648L4.01089 18.1581H1.19796L7.76713 10.6498L0.835938 1.58643H6.63686L10.6421 6.8817L15.2745 1.58643ZM14.2879 16.4754H15.8456L5.79043 3.1807H4.11882L14.2879 16.4754Z"
+      fill="white"
+    />
+  </svg>
+);

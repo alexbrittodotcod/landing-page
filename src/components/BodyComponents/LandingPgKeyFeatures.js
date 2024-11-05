@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import "../../styles/globals.scss";
 import { motion } from "framer-motion";
 
+// ProgressBar component
 const ProgressBar = ({ onTimerComplete }) => {
   const [progress, setProgress] = useState(0);
 
@@ -31,9 +32,9 @@ const ProgressBar = ({ onTimerComplete }) => {
   );
 };
 
-
+// Landing Page Key Features component
 const LandingPgKeyFeatures = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(null); // Start with no active item
 
   const items = [
     {
@@ -66,14 +67,21 @@ const LandingPgKeyFeatures = () => {
     },
   ];
 
+  // Handles when the timer completes and automatically switches the tab
   const handleTimerComplete = () => {
     setActiveIndex((prevIndex) =>
       prevIndex === items.length - 1 ? 0 : prevIndex + 1
     );
   };
 
+  // Handles when an item is hovered over or clicked
   const handleHover = (index) => {
-    setActiveIndex(index);
+    if (activeIndex !== index) {
+      setActiveIndex(null); // Close the current item first
+      setTimeout(() => {
+        setActiveIndex(index); // Open the next item after a delay
+      }, 300); // Adjust delay to match the closing animation
+    }
   };
 
   return (
@@ -95,13 +103,13 @@ const LandingPgKeyFeatures = () => {
               <div
                 key={index}
                 onMouseEnter={() => handleHover(index)}
-                className={`flex flex-row border pointer rounded-lg p-4 transition-all duration-10000 delay-30000 ${
+                className={`flex flex-row border pointer rounded-lg p-4 transition-all duration-300 ${
                   index === activeIndex
                     ? "border-red-300 bg-white shadow-md"
                     : "border-gray-200 bg-white"
                 }`}
               >
-                <div className=" w-[50px] flex items-center justify-center">
+                <div className="w-[50px] flex items-center justify-center">
                   {index === activeIndex && (
                     <ProgressBar onTimerComplete={handleTimerComplete} />
                   )}
@@ -162,9 +170,9 @@ const LandingPgKeyFeatures = () => {
           </div>
         </div>
 
-        {/* Images container */}
+        {/* Images container with fixed height */}
         <div className="px-[13px] py-[12px] shadow-[8px_8px_30px_0px_#E8395C1A] rounded-md bg-white">
-          <div className="rounded-md bg-[#F7F6F6] px-[2.8125rem] py-[0.9375rem]">
+          <div className="rounded-md bg-[#F7F6F6] px-[2.8125rem] py-[0.9375rem] h-[21rem] flex justify-center items-center">
             <img
               src={items[activeIndex]?.featureImg}
               className="w-[26.75rem] h-[20.125rem] object-contain"

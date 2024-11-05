@@ -1,3 +1,4 @@
+"use client";
 import {
   FooterHirewalksTxt,
   FooterWhiteHirewalks,
@@ -5,8 +6,10 @@ import {
   WhiteF,
   WhiteInstagramIcon,
   WhitePhoneIcon,
+  WhiteTwitter,
   WhiteYT,
 } from "./icons/footer-icons";
+import { motion } from "framer-motion";
 
 // components/Footer.js
 const Footer = () => {
@@ -120,15 +123,66 @@ const Footer = () => {
 
           <div className="flex flex-row gap-[30px]">
             <div className="flex flex-row gap-[20px]">
-              <img src="/Google play.svg" />
+              <motion.a
+                href="https://play.google.com/store/apps/details?id=com.hirewalks.candidates&hl=en_IN"
+                target={"_blank"}
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <img src="/Google play.svg" />
+              </motion.a>
 
-              <img src="/App Store 1.svg" />
+              <motion.a
+                href="https://apps.apple.com/in/app/hirewalks-job-search-app/id1613292784"
+                target={"_blank"}
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <img src="/App Store 1.svg" />
+              </motion.a>
             </div>
 
             <div className="flex flex-row items-center gap-[20px]">
-              <WhiteF />
+              <motion.a
+                href="https://www.facebook.com/HirewalksIndia/"
+                target={"_blank"}
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <WhiteF />
+              </motion.a>
+
+              <motion.a
+                href="https://www.youtube.com/channel/UCYSLoup61q52LFw41OKANtQ"
+                target={"_blank"}
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <WhiteYT />
+              </motion.a>
+
+              <motion.a
+                href="https://www.instagram.com/hirewalks/?hl=en"
+                target={"_blank"}
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <WhiteInstagramIcon />
+              </motion.a>
+
+              <motion.a
+                href=""
+                target={"_blank"}
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <WhiteTwitter />
+              </motion.a>
+
+              {/* <WhiteF />
               <WhiteYT />
               <WhiteInstagramIcon />
+              <WhiteTwitter /> */}
             </div>
           </div>
         </div>
