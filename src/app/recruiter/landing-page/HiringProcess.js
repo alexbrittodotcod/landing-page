@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import "../../styles/globals.scss";
 
 // components/Footer.js
 const HiringProcess = () => {

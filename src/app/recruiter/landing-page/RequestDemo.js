@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import "../../styles/globals.scss";
 import { FormTopBar } from "@/components/icons/form-icons";
 
 // components/Footer.js

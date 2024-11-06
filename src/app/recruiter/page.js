@@ -1,31 +1,29 @@
 //import "./globals.css";
-import "../styles/globals.scss";
-import "../styles/landing-page.scss";
-import FrequentQuiz from "./BodyComponents/FrequentQuiz";
-import HiringProcess from "./BodyComponents/HiringProcess";
-import LandingPgAdOns from "./BodyComponents/LandingPgAdOns";
-import LandingPgBanner from "./BodyComponents/LandingPgBanner";
-import LandingPgKeyFeatures from "./BodyComponents/LandingPgKeyFeatures";
-import RequestDemo from "./BodyComponents/RequestDemo";
+import "../../styles/landing-page.scss";
+import FrequentQuiz from "./landing-page/FrequentQuiz";
+import HiringProcess from "./landing-page/HiringProcess";
+import AdOns from "./landing-page/AdOns";
+import Banner from "./landing-page/Banner";
+import KeyFeatures from "./landing-page/KeyFeatures";
+import RequestDemo from "./landing-page/RequestDemo";
 import { FormTopBar } from "@/components/icons/form-icons";
 
-// components/Body.js
-const Body = () => {
+export default function Recruiter() {
   return (
     <main className="font-avenir flex flex-col items-center justify-center">
-      {/* <section id="about" className="w-full text-center banner-gradient">
-        <LandingPgBanner />
-      </section> */}
+      <section id="about" className="w-full text-center banner-gradient">
+        <Banner />
+      </section>
 
       <section
         id="about"
         className="bg-[url('/bg-stripes.svg')] relative w-full text-center landing-page-box-shadow"
       >
         {/* 2. Key Features */}
-        <LandingPgKeyFeatures />
+        <KeyFeatures />
 
         {/* 3. Hiring Adons */}
-        <LandingPgAdOns />
+        <AdOns />
 
         <div className="absolute z-[1] w-full bottom-[-1px]">
           <FormTopBar className="w-full" />
@@ -55,6 +53,4 @@ const Body = () => {
       </section> */}
     </main>
   );
-};
-
-export default Body;
+}

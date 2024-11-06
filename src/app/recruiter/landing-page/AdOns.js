@@ -1,8 +1,5 @@
-import "../../styles/globals.scss";
-import "../../styles/landing-page.scss";
-
 // components/Footer.js
-const LandingPgAdOns = () => {
+const AdOns = () => {
   // Example array of card objects
   const cardData = [
     {
@@ -117,4 +114,4 @@ const LandingPgAdOns = () => {
   );
 };
 
-export default LandingPgAdOns;
+export default AdOns;

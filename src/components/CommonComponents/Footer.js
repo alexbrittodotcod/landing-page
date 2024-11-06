@@ -8,7 +8,7 @@ import {
   WhitePhoneIcon,
   WhiteTwitter,
   WhiteYT,
-} from "./icons/footer-icons";
+} from "../icons/footer-icons";
 import { motion } from "framer-motion";
 
 // components/Footer.js

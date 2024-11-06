@@ -1,7 +1,6 @@
-//import "./globals.css";
-import "../styles/landing-page.scss";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import "../styles/globals.scss";
+import Header from "../components/CommonComponents/Header";
+import Footer from "../components/CommonComponents/Footer";
 import Head from "next/head";
 
 export const metadata = {

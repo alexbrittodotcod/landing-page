@@ -1,9 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import "../../styles/globals.scss";
-import "../../styles/landing-page.scss";
-import Accordion from "../CommonComponents/AccordianTab";
+import Accordion from "../../../components/CommonComponents/AccordianTab";
 
 // components/Footer.js
 const FrequentQuiz = () => {

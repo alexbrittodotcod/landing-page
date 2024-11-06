@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import "../../styles/globals.scss";
 import { motion } from "framer-motion";
 
 // ProgressBar component
@@ -33,7 +32,7 @@ const ProgressBar = ({ onTimerComplete }) => {
 };
 
 // Landing Page Key Features component
-const LandingPgKeyFeatures = () => {
+const KeyFeatures = () => {
   const [activeIndex, setActiveIndex] = useState(0); // Start with no active item
   const [imageLoaded, setImageLoaded] = useState(false); // Track if image is loaded
   const [imageError, setImageError] = useState(false); // Track if there is an error loading the image
@@ -213,4 +212,4 @@ const LandingPgKeyFeatures = () => {
   );
 };
 
-export default LandingPgKeyFeatures;
+export default KeyFeatures;
