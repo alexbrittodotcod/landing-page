@@ -29,7 +29,7 @@ const Header = () => {
         ${
           scrolled
             ? "bg-white shadow-lg"
-            : 'bg-[url("/header-bg.svg")] header-linear-bg'
+            : 'header-linear-bg'
         }`}
       >
         <div className="flex justify-between items-center max-w-7xl mx-auto px-4 w-[100%]">

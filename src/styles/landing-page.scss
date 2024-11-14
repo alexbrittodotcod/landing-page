@@ -70,7 +70,7 @@
 
 .scroll {
   display: flex;
-  width: max-content; /* Ensures the width fits the content */
+  width: fit-content; /* Ensures the width fits the content */
   animation: scroll 20s linear infinite;
 }
 
