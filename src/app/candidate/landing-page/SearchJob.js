@@ -4,22 +4,22 @@ export default function SearchJob() {
   return (
     <div className="avenir-regular bg-[url('/header-bg.svg')] header-linear-bg">
       <div className="flex justify-center max-w-7xl mx-auto w-[100%]">
-        <div class="flex flex-col items-center space-y-4">
+        <div className="flex flex-col items-center space-y-4">
           <div className="text-[2rem] sm:text-xl font-extrabold text-[#493438] leading-tight text-left mt-12 mb-4 mx-2 xl:whitespace-normal whitespace-nowrap">
             Find and Apply for a Job that{" "}
             <span className="text-theme-color">Matches you!</span>
           </div>
 
           {/* <!-- Search Bar Container --> */}
-          <div class="flex items-center bg-white shadow-md rounded-lg p-2 space-x-2 mx-[0.5rem] md:flex-col md:space-y-2 md:w-[98%]">
+          <div className="flex items-center bg-white shadow-md rounded-lg p-2 space-x-2 mx-[0.5rem] md:flex-col md:space-y-2 md:w-[98%]">
             <div className="flex md:flex-col md:space-y-2 md:w-full">
               {/* <!-- Search Input --> */}
-              <div class="flex items-center flex-grow mr-[1.5rem]">
+              <div className="flex items-center flex-grow mr-[1.5rem]">
                 <SearchJobLens />
                 <input
                   type="text"
                   placeholder="Search for Software Developer"
-                  class="flex-grow border-none outline-none bg-transparent text-gray-500 pl-2 placeholder-gray-400 w-[15rem]"
+                  className="flex-grow border-none outline-none bg-transparent text-gray-500 pl-2 placeholder-gray-400 w-[15rem]"
                 />
               </div>
 
@@ -28,33 +28,33 @@ export default function SearchJob() {
               </div>
 
               {/* <!-- Location Input --> */}
-              <div class="flex items-center">
+              <div className="flex items-center">
                 <SearchJobLocation />
                 <input
                   type="text"
                   placeholder="Location"
-                  class="border-none outline-none bg-transparent text-gray-500 pl-2 placeholder-gray-400"
+                  className="border-none outline-none bg-transparent text-gray-500 pl-2 placeholder-gray-400"
                 />
               </div>
             </div>
 
             {/* <!-- Search Button --> */}
-            <button class="bg-theme-color text-white px-4 py-2 rounded-md  text-[0.875rem] hover:bg-red-600">
+            <button className="bg-theme-color text-white px-4 py-2 rounded-md  text-[0.875rem] hover:bg-red-600">
               Search Jobs
             </button>
           </div>
 
           {/* <!-- Most Searched Jobs --> */}
-          <div class="flex flex-row flex-wrap items-center space-x-4 text-gray-500 text-sm mx-[0.5rem]">
+          <div className="flex flex-row flex-wrap items-center space-x-4 text-gray-500 text-sm mx-[0.5rem]">
             <span>Most Searched Jobs:</span>
-            <div class="flex flex-wrap space-x-2">
-              <div class="bg-white text-gray-700 px-3 py-1 rounded-full shadow my-1">
+            <div className="flex flex-wrap space-x-2">
+              <div className="bg-white text-gray-700 px-3 py-1 rounded-full shadow my-1">
                 Angular Developer
               </div>
-              <div class="bg-white text-gray-700 px-3 py-1 rounded-full shadow my-1">
+              <div className="bg-white text-gray-700 px-3 py-1 rounded-full shadow my-1">
                 UX Design
               </div>
-              <div class="bg-white text-gray-700 px-3 py-1 rounded-full shadow my-1">
+              <div className="bg-white text-gray-700 px-3 py-1 rounded-full shadow my-1">
                 Digital Marketing
               </div>
             </div>

@@ -1,4 +1,3 @@
-
 .bg-gradient-custom {
   background: linear-gradient(
     90.18deg,
@@ -59,19 +58,42 @@
   transform: scaleY(-1);
 }
 
+/* Scroll from Left to Right */
+@keyframes scroll-left-to-right {
+  0% {
+    transform: translateX(-100%); /* Start completely off-screen to the left */
+  }
+  100% {
+    transform: translateX(100%); /* Move completely off-screen to the right */
+  }
+}
+
+.scroll-left-to-right {
+  display: flex; /* Ensures smooth horizontal scrolling */
+  width: fit-content; /* Adjusts the container width to content */
+  animation: scroll-left-to-right 100s linear infinite; /* Left-to-right scrolling */
+  white-space: nowrap; /* Prevents line breaks */
+}
+
 @keyframes scroll {
   0% {
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%); /* Move halfway through the container to make it seamless */
   }
+}
+
+.scroll-wrapper {
+  overflow: hidden; /* Ensures that only the visible part of the scrolling content is shown */
+  width: 100%; /* Set the width to the container */
 }
 
 .scroll {
   display: flex;
-  width: fit-content; /* Ensures the width fits the content */
-  animation: scroll 20s linear infinite;
+  animation: scroll 60s linear infinite; /* Infinite scroll with the desired duration */
+  white-space: nowrap; /* Prevents line breaks */
+  min-width: 100%; /* Ensures scrolling starts from the full width */
 }
 
 .accordion-tab-shadow {
@@ -133,4 +155,30 @@
   .step-3-img {
     display: none;
   }
+}
+
+.candidate-resume-checker-box-shadow {
+  box-shadow: 11px 13.75px 48.11px 0px #7e8afd14;
+}
+
+.resume-checker-box {
+  backdrop-filter: blur(54.43378448486328px);
+  border: 1.3px solid;
+  border-image-source: radial-gradient(
+      116.39% 236.06% at 0% 0%,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0) 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+}
+
+.job-posts-scroll-card {
+  box-shadow: 0px 0px 20px 0px #0000000d;
+  border: 1px solid #FFFFFF;
+  background: linear-gradient(180deg, #FFF6F8 -10.65%, #FFFFFF 52.82%, #FFFFFF 100%);
+}
+
+.download-card {
+  box-shadow: 0px 4px 30px 0px #E8395C26;
+  background: #FBF9F9;
 }

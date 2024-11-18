@@ -71,7 +71,7 @@ time and resources for hiring. Everything changed when I partnered with HireWalk
       </div>
 
       <div className="grid grid-cols-2 gap-[6.875rem] lg:grid-cols-1 items-center max-w-7xl mt-[3.75rem] relative z-10">
-        {/* <div class="absolute inset-0 bg-gradient-to-r from-[#131316] to-transparent" style="background: linear-gradient(19.21deg, #131316 17.74%, rgba(19, 19, 22, 0.6) 52.88%, rgba(19, 19, 22, 0) 84.54%); z-index: 10;"></div> */}
+        {/* <div className="absolute inset-0 bg-gradient-to-r from-[#131316] to-transparent" style="background: linear-gradient(19.21deg, #131316 17.74%, rgba(19, 19, 22, 0.6) 52.88%, rgba(19, 19, 22, 0) 84.54%); z-index: 10;"></div> */}
         <div
           className="flex flex-col gap-[4.5rem] xl:px-[1.563rem] overflow-y-hidden h-[38rem]"
           ref={firstContainerRef}
