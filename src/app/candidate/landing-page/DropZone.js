@@ -3,6 +3,7 @@
 // components/Dropzone.js
 import { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
+import Image from "next/image";
 
 function Dropzone() {
   const [error, setError] = useState("");
@@ -36,16 +37,18 @@ function Dropzone() {
       ) : (
         <div className="flex flex-col items-center cursor-pointer">
           <div className="bg-[#E8395C1A] rounded-full">
-            <img
+            <Image
               src="/resume-checker.gif"
               alt="scanner"
+              width={60} // Specify image dimensions
+              height={60}
               className="w-[3.75rem] h-[3.75rem]"
             />
           </div>
 
           <div className="text-gray-600 text-[1rem] leading-[1.562rem] mt-[1rem]">
             <div className="font-extrabold">
-              Drop your resume here or&nbsp;  
+              Drop your resume here or&nbsp;
               <span className="underline">choose a file.</span>
             </div>
 
