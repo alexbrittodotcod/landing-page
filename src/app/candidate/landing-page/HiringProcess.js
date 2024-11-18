@@ -106,9 +106,9 @@ const HiringProcess = () => {
             <div className="text-base font-extrabold leading-[1.562rem] text-white">
               Apply for jobs & get hired quickly
             </div>
-            <div className=" text-sm font-normal leading-[1.352rem] text-[#9394A1] text-left">
-              Once your profile is updated, you'll be visible to employers in
-              our network & you can apply for jobs.
+            <div className="text-sm font-normal leading-[1.352rem] text-[#9394A1] text-left">
+              Once your profile is updated, you&apos;ll be visible to employers
+              in our network & you can apply for jobs.
             </div>
           </div>
 
