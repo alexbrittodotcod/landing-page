@@ -45,7 +45,7 @@ function Dropzone() {
 
           <div className="text-gray-600 text-[1rem] leading-[1.562rem] mt-[1rem]">
             <div className="font-extrabold">
-              Drop your resume here or{" "}
+              Drop your resume here or&nbsp;  
               <span className="underline">choose a file.</span>
             </div>
 
