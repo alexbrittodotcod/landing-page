@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import "../../../styles/landing-page.scss";
 import { HirewalksIcon } from "@/components/icons/common-icons";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 // components/Footer.js
 const HiringProcess = () => {
@@ -84,7 +85,13 @@ const HiringProcess = () => {
           </div>
 
           <div className="mt-[1.326rem] h-[15.625rem] flex justify-center">
-            <img src="/candidate-step-2.svg" className="h-[100%]" />
+            <Image
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/candidate-step-2.svg`}
+              alt="scanner"
+              width={400} // Specify image dimensions
+              height={253}
+              className="w-[full] h-[15.625rem]"
+            />
           </div>
         </div>
 
@@ -146,14 +153,21 @@ const HiringProcess = () => {
               </div>
             </div>
 
-            <div className="flex flex-row gap-[20px] mt-[1.438rem] xl:justify-center">
+            <div className="flex flex-row gap-[20px] mt-[1.438rem] pb-[2.125rem] xl:justify-center">
               <motion.a
                 href="https://play.google.com/store/apps/details?id=com.hirewalks.candidates&hl=en_IN"
                 target={"_blank"}
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <img src="/Google play.svg" />
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/Google play.svg`}
+                  alt="Google play"
+                  width={135} // Specify image dimensions
+                  height={41}
+                  className="w-[full] h-[2.563rem]"
+                  priority
+                />
               </motion.a>
 
               <motion.a
@@ -162,7 +176,17 @@ const HiringProcess = () => {
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <img src="/App Store 1.svg" />
+                {/* <img
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/app_store.svg`}
+                /> */}
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/app_store.svg`}
+                  alt="App Store"
+                  width={135} // Specify image dimensions
+                  height={41}
+                  className="w-[full] h-[2.563rem]"
+                  priority
+                />
               </motion.a>
             </div>
           </div>
@@ -184,7 +208,13 @@ const HiringProcess = () => {
           </div>
 
           <div className="flex items-end justify-center xl:mt-[1.3rem] xl:hidden">
-            <img src="/top-companies.svg" />
+            <Image
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/top-companies.svg`}
+              alt="Top Comapnies"
+              width={350} // Specify image dimensions
+              height={318}
+              priority
+            />
           </div>
         </div>
       </div>

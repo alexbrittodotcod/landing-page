@@ -147,7 +147,10 @@ const KeyFeatures = () => {
                         index === activeIndex ? "rotate-180" : ""
                       }`}
                     >
-                      <img src="dropdown.svg" alt="dropdown icon" />
+                      <img
+                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/dropdown.svg`}
+                        alt="dropdown icon"
+                      />
                     </span>
                   </div>
 
@@ -169,7 +172,10 @@ const KeyFeatures = () => {
                         >
                           Learn More{" "}
                           <span className="ml-[8px]">
-                            <img src="right-theme-arrow.svg" alt="arrow icon" />
+                            <img
+                              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/right-theme-arrow.svg`}
+                              alt="arrow icon"
+                            />
                           </span>
                         </a>
                       </div>
@@ -196,7 +202,10 @@ const KeyFeatures = () => {
             )}
             {!imageError && (
               <img
-                src={items[activeIndex]?.featureImg}
+                src={
+                  `${process.env.NEXT_PUBLIC_BASE_PATH}/` +
+                  items[activeIndex]?.featureImg
+                }
                 className={`w-[26.75rem] h-[20.125rem] object-contain ${
                   !imageLoaded ? "hidden" : ""
                 }`} // Hide image until it's loaded

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Accordion from "../../../components/CommonComponents/AccordianTab";
+import Image from "next/image";
 
 // components/Footer.js
 const FrequentQuiz = () => {
@@ -37,16 +38,62 @@ const FrequentQuiz = () => {
 
         <div className="flex flex-row gap-[3.4375rem] items-center justify-center mt-[2.25rem] overflow-hidden">
           <div className="scroll flex flex-row gap-[3.4375rem]">
-            <img src="/google.svg" alt="Google" />
-            <img src="/amazon.svg" alt="Amazon" />
-            <img src="/capgemini.svg" alt="Capgemini" />
-            <img src="/paytm.svg" alt="Paytm" />
-            <img src="/flipkart.svg" alt="Flipkart" />
-            <img src="/phonepe.svg" alt="PhonePe" />
-            <img src="/capgemini.svg" alt="Capgemini" />
-            <img src="/paytm.svg" alt="Paytm" />
-            <img src="/flipkart.svg" alt="Flipkart" />
-            <img src="/phonepe.svg" alt="PhonePe" />
+            <Image
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/google.svg`}
+              alt="Logo"
+              width={100}
+              height={5}
+              priority
+              style={{ width: "auto", height: "auto" }}
+            />
+            <Image
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/amazon.svg`}
+              alt="Logo"
+              width={100}
+              height={45}
+              priority
+              style={{ width: "auto", height: "auto" }}
+            />
+            <Image
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/capgemini.svg`}
+              alt="Logo"
+              width={100}
+              height={45}
+              priority
+              style={{ width: "auto", height: "auto" }}
+            />
+            <Image
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/paytm.svg`}
+              alt="Logo"
+              width={100}
+              height={45}
+              priority
+              style={{ width: "auto", height: "auto" }}
+            />
+            <Image
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/flipkart.svg`}
+              alt="Logo"
+              width={100}
+              height={45}
+              priority
+              style={{ width: "auto", height: "auto" }}
+            />
+            <Image
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/phonepe.svg`}
+              alt="Logo"
+              width={100}
+              height={45}
+              priority
+              style={{ width: "auto", height: "auto" }}
+            />
+            <Image
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/paytm.svg`}
+              alt="Logo"
+              width={100}
+              height={45}
+              priority
+              style={{ width: "auto", height: "auto" }}
+            />
           </div>
         </div>
       </div>

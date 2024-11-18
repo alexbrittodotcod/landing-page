@@ -1,3 +1,5 @@
+import Testimonials from "./Testimonials";
+
 export default function SuccessStories() {
   return (
     <div className="avenir-regular max-w-7xl mx-auto px-4 w-[100%] mb-[5.625rem]">
@@ -11,6 +13,8 @@ export default function SuccessStories() {
           Real feedback from candidates finding their dream jobs
         </div>
       </div>
+
+      <Testimonials />
     </div>
   );
 }

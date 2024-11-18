@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 // components/Footer.js
 const AdOns = () => {
   // Example array of card objects
@@ -64,7 +66,14 @@ const AdOns = () => {
         {cardData.map((card) => (
           <div key={card.id} className="p-5 add-ons-cards">
             <div className="bg-[#FDEBEF] w-[2.625rem] h-[2.625rem] mb-7 rounded-lg flex items-center justify-center content-center">
-              <img src={card.image} />
+              <Image
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH}` + card.image}
+                alt="Logo"
+                width={30}
+                height={30}
+                priority
+                style={{ width: "auto", height: "auto" }}
+              />
             </div>
             <div className="text-[1.125rem] font-extrabold leading-[1.7575rem] text-left text-[rgba(73,52,56,1)]">
               {card.title}
@@ -80,7 +89,14 @@ const AdOns = () => {
       <div className="pricing-block pricing-border-gradient rounded-[1.25rem] mt-[5.75rem]">
         <div className="flex flex-row flex-wrap content w-full p-x-[3.3125rem] p-[2.125rem] pr-[2.625rem]">
           <div className="flex-shrink-0">
-            <img src="Clip path group.svg" alt="Icon" />
+            <Image
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/Clip path group.svg`}
+              alt="Clip Path"
+              width={102}
+              height={102}
+              priority
+              style={{ width: "auto", height: "auto" }}
+            />
           </div>
 
           <div className="flex flex-col items-start ml-6">
@@ -105,7 +121,13 @@ const AdOns = () => {
             </button>
 
             <div className="absolute right-[3rem] top-[-5rem]">
-              <img src="view-pricing.gif" />
+              <Image
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH}/view-pricing.gif`}
+                alt="Clip Path"
+                width={180}
+                height={131}
+                priority
+              />
             </div>
           </div>
         </div>

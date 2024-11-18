@@ -2,6 +2,7 @@ import {
   RightArrow,
   RedRightArrow,
 } from "@/components/icons/candidate-landing";
+import Image from "next/image";
 
 export default function LatestJobPost() {
   const JobPosts = [
@@ -42,7 +43,13 @@ export default function LatestJobPost() {
                     key={index}
                   >
                     <div className="border border-[#E0E1E3] w-[2.75rem] h-[2.75rem] rounded-md mr-[0.625rem]">
-                      <img src="/test.png" />
+                      <Image
+                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/test.png`}
+                        alt="Logo"
+                        width={44} // Specify image dimensions
+                        height={44}
+                        priority
+                      />
                     </div>
 
                     <div className="flex flex-col items-start mr-[0.75rem]">
@@ -73,7 +80,13 @@ export default function LatestJobPost() {
                     key={index}
                   >
                     <div className="border border-[#E0E1E3] w-[2.75rem] h-[2.75rem] rounded-md mr-[0.625rem]">
-                      <img src="/test.png" />
+                      <Image
+                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/test.png`}
+                        alt="Logo"
+                        width={44} // Specify image dimensions
+                        height={44}
+                        priority
+                      />
                     </div>
 
                     <div className="flex flex-col items-start mr-[0.75rem]">

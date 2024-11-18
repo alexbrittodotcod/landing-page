@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const Header = () => {
@@ -26,19 +27,18 @@ const Header = () => {
     <>
       <header
         className={`py-[1rem] sticky top-0 z-[999] transition-all duration-300 
-        ${
-          scrolled
-            ? "bg-white shadow-lg"
-            : 'header-linear-bg'
-        }`}
+        ${scrolled ? "bg-white shadow-lg" : "header-linear-bg"}`}
       >
         <div className="flex justify-between items-center max-w-7xl mx-auto px-4 w-[100%]">
           {/* Logo */}
           <div className="text-xl font-bold">
-            <img
-              src="/HW Red logo - Main Logo.svg"
+            <Image
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/HW Red logo - Main Logo.svg`}
               alt="HW Logo"
-              className="h-10"
+              layout="responsive"
+              width={133} // Set the width as a reference
+              height={40} // Set the height as a reference
+              priority
             />
           </div>
 

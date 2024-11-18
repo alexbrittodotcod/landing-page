@@ -129,7 +129,9 @@ const Footer = () => {
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <img src="/Google play.svg" />
+                <img
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/Google play.svg`}
+                />
               </motion.a>
 
               <motion.a
@@ -138,7 +140,9 @@ const Footer = () => {
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <img src="/App Store 1.svg" />
+                <img
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/app_store.svg`}
+                />
               </motion.a>
             </div>
 
