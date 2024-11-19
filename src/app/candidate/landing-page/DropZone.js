@@ -38,7 +38,7 @@ function Dropzone() {
         <div className="flex flex-col items-center cursor-pointer">
           <div className="bg-[#E8395C1A] rounded-full">
             <Image
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/resume-checker.gif`}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}resume-checker.gif`}
               alt="scanner"
               width={60} // Specify image dimensions
               height={60}

@@ -39,7 +39,7 @@ const FrequentQuiz = () => {
         <div className="flex flex-row gap-[3.4375rem] items-center justify-center mt-[2.25rem] overflow-hidden">
           <div className="scroll flex flex-row gap-[3.4375rem]">
             <Image
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/google.svg`}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}google.svg`}
               alt="Logo"
               width={100}
               height={5}
@@ -47,7 +47,7 @@ const FrequentQuiz = () => {
               style={{ width: "auto", height: "auto" }}
             />
             <Image
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/amazon.svg`}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}amazon.svg`}
               alt="Logo"
               width={100}
               height={45}
@@ -55,7 +55,7 @@ const FrequentQuiz = () => {
               style={{ width: "auto", height: "auto" }}
             />
             <Image
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/capgemini.svg`}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}capgemini.svg`}
               alt="Logo"
               width={100}
               height={45}
@@ -63,7 +63,7 @@ const FrequentQuiz = () => {
               style={{ width: "auto", height: "auto" }}
             />
             <Image
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/paytm.svg`}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}paytm.svg`}
               alt="Logo"
               width={100}
               height={45}
@@ -71,7 +71,7 @@ const FrequentQuiz = () => {
               style={{ width: "auto", height: "auto" }}
             />
             <Image
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/flipkart.svg`}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}flipkart.svg`}
               alt="Logo"
               width={100}
               height={45}
@@ -79,7 +79,7 @@ const FrequentQuiz = () => {
               style={{ width: "auto", height: "auto" }}
             />
             <Image
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/phonepe.svg`}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}phonepe.svg`}
               alt="Logo"
               width={100}
               height={45}
@@ -87,7 +87,7 @@ const FrequentQuiz = () => {
               style={{ width: "auto", height: "auto" }}
             />
             <Image
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/paytm.svg`}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}paytm.svg`}
               alt="Logo"
               width={100}
               height={45}

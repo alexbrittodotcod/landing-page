@@ -44,7 +44,7 @@ export default function LatestJobPost() {
                   >
                     <div className="border border-[#E0E1E3] w-[2.75rem] h-[2.75rem] rounded-md mr-[0.625rem]">
                       <Image
-                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/test.png`}
+                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}test.png`}
                         alt="Logo"
                         width={44} // Specify image dimensions
                         height={44}
@@ -81,7 +81,7 @@ export default function LatestJobPost() {
                   >
                     <div className="border border-[#E0E1E3] w-[2.75rem] h-[2.75rem] rounded-md mr-[0.625rem]">
                       <Image
-                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/test.png`}
+                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}test.png`}
                         alt="Logo"
                         width={44} // Specify image dimensions
                         height={44}

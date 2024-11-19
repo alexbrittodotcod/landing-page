@@ -12,7 +12,7 @@ const Banner = () => {
         <div className="flex flex-col py-20">
           <div className="flex flex-row gap-[4px]">
             <Image
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/red-stars.svg`}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}red-stars.svg`}
               alt="Clip Path"
               width={20}
               height={20}
@@ -39,7 +39,7 @@ const Banner = () => {
             <button className="w-48 h-12 py-2 px-4 rounded-lg bg-theme-color text-white text-sm font-bold flex items-center justify-center gap-2">
               Request a Demo
               <Image
-                src={`${process.env.NEXT_PUBLIC_BASE_PATH}/white-stars.svg`}
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH}white-stars.svg`}
                 alt="Clip Path"
                 width={20}
                 height={20}
