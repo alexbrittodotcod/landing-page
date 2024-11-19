@@ -35,12 +35,12 @@ const HiringProcess = () => {
             </div>
 
             <img
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH}onboard.svg`}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/onboard.svg`}
               alt="onboard"
               className="step-1-img w-[16rem] h-[11rem]"
             />
             <img
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH}onboard-red.svg`}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/onboard-red.svg`}
               alt="onboard"
               className="step-1-red-img w-[16rem] h-[11rem]"
             />
@@ -71,12 +71,12 @@ const HiringProcess = () => {
             </div>
 
             <img
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH}post-job.svg`}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/post-job.svg`}
               alt="postJob"
               className="step-2-img w-[16rem] h-[13rem]"
             />
             <img
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH}post-job-red.svg`}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/post-job-red.svg`}
               alt="postJob"
               className="step-2-red-img w-[16rem] h-[13rem]"
             />
@@ -107,12 +107,12 @@ const HiringProcess = () => {
             </div>
 
             <img
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH}ats-match.svg`}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/ats-match.svg`}
               alt="ats-match"
               className="step-3-img"
             />
             <img
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH}ats-match-red.svg`}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/ats-match-red.svg`}
               alt="ats-match"
               className="step-3-red-img"
             />

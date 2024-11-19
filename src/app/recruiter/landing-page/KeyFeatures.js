@@ -148,7 +148,7 @@ const KeyFeatures = () => {
                       }`}
                     >
                       <img
-                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}dropdown.svg`}
+                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/dropdown.svg`}
                         alt="dropdown icon"
                       />
                     </span>
@@ -173,7 +173,7 @@ const KeyFeatures = () => {
                           Learn More{" "}
                           <span className="ml-[8px]">
                             <img
-                              src={`${process.env.NEXT_PUBLIC_BASE_PATH}right-theme-arrow.svg`}
+                              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/right-theme-arrow.svg`}
                               alt="arrow icon"
                             />
                           </span>
@@ -203,7 +203,7 @@ const KeyFeatures = () => {
             {!imageError && (
               <img
                 src={
-                  `${process.env.NEXT_PUBLIC_BASE_PATH}` +
+                  `${process.env.NEXT_PUBLIC_BASE_PATH}/` +
                   items[activeIndex]?.featureImg
                 }
                 className={`w-[26.75rem] h-[20.125rem] object-contain ${

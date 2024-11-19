@@ -33,7 +33,7 @@ const Header = () => {
           {/* Logo */}
           <div className="text-xl font-bold">
             <Image
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH}HW Red logo - Main Logo.svg`}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/HW Red logo - Main Logo.svg`}
               alt="HW Logo"
               layout="responsive"
               width={133} // Set the width as a reference

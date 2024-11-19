@@ -86,7 +86,7 @@ const HiringProcess = () => {
 
           <div className="mt-[1.326rem] h-[15.625rem] flex justify-center">
             <Image
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH}candidate-step-2.svg`}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/candidate-step-2.svg`}
               alt="scanner"
               width={400} // Specify image dimensions
               height={253}
@@ -161,7 +161,7 @@ const HiringProcess = () => {
                 whileTap={{ scale: 0.9 }}
               >
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}Google play.svg`}
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/Google play.svg`}
                   alt="Google play"
                   width={135} // Specify image dimensions
                   height={41}
@@ -177,10 +177,10 @@ const HiringProcess = () => {
                 whileTap={{ scale: 0.9 }}
               >
                 {/* <img
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}app_store.svg`}
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/app_store.svg`}
                 /> */}
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}app_store.svg`}
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/app_store.svg`}
                   alt="App Store"
                   width={135} // Specify image dimensions
                   height={41}
@@ -209,7 +209,7 @@ const HiringProcess = () => {
 
           <div className="flex items-end justify-center xl:mt-[1.3rem] xl:hidden">
             <Image
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH}top-companies.svg`}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/top-companies.svg`}
               alt="Top Comapnies"
               width={350} // Specify image dimensions
               height={318}

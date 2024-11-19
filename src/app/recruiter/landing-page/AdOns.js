@@ -67,7 +67,7 @@ const AdOns = () => {
           <div key={card.id} className="p-5 add-ons-cards">
             <div className="bg-[#FDEBEF] w-[2.625rem] h-[2.625rem] mb-7 rounded-lg flex items-center justify-center content-center">
               <Image
-                src={`${process.env.NEXT_PUBLIC_BASE_PATH}` + card.image}
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH}/` + card.image}
                 alt="Logo"
                 width={30}
                 height={30}
@@ -90,7 +90,7 @@ const AdOns = () => {
         <div className="flex flex-row flex-wrap content w-full p-x-[3.3125rem] p-[2.125rem] pr-[2.625rem]">
           <div className="flex-shrink-0">
             <Image
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH}Clip path group.svg`}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/Clip path group.svg`}
               alt="Clip Path"
               width={102}
               height={102}
@@ -122,7 +122,7 @@ const AdOns = () => {
 
             <div className="absolute right-[3rem] top-[-5rem]">
               <Image
-                src={`${process.env.NEXT_PUBLIC_BASE_PATH}view-pricing.gif`}
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH}/view-pricing.gif`}
                 alt="Clip Path"
                 width={180}
                 height={131}

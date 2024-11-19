@@ -92,7 +92,7 @@ time and resources for hiring. Everything changed when I partnered with HireWalk
                 <div className="flex flex-row mt-[14px] space-x-[14px] items-center">
                   <div>
                     <img
-                      src={`${process.env.NEXT_PUBLIC_BASE_PATH}roshan.png`}
+                      src={`${process.env.NEXT_PUBLIC_BASE_PATH}/roshan.png`}
                       className="w-[2.8125rem] h-[2.8125rem] rounded-full"
                     />
                   </div>
@@ -119,7 +119,7 @@ time and resources for hiring. Everything changed when I partnered with HireWalk
             <div>Schedule Now</div>
             <div>
               <img
-                src={`${process.env.NEXT_PUBLIC_BASE_PATH}white-stars.svg`}
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH}/white-stars.svg`}
                 alt="Stars"
               />
             </div>

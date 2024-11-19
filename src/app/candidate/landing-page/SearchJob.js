@@ -71,7 +71,7 @@ export default function SearchJob() {
             <div className="flex flex-1 flex-row gap-[3.4375rem] items-center justify-center overflow-hidden">
               <div className="scroll flex flex-row gap-[3.4375rem] md:gap-[2rem]">
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}google.svg`}
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/google.svg`}
                   alt="Logo"
                   width={100}
                   height={5}
@@ -79,7 +79,7 @@ export default function SearchJob() {
                   style={{ width: "auto", height: "auto" }}
                 />
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}amazon.svg`}
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/amazon.svg`}
                   alt="Logo"
                   width={100}
                   height={45}
@@ -87,7 +87,7 @@ export default function SearchJob() {
                   style={{ width: "auto", height: "auto" }}
                 />
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}capgemini.svg`}
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/capgemini.svg`}
                   alt="Logo"
                   width={100}
                   height={45}
@@ -95,7 +95,7 @@ export default function SearchJob() {
                   style={{ width: "auto", height: "auto" }}
                 />
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}paytm.svg`}
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/paytm.svg`}
                   alt="Logo"
                   width={100}
                   height={45}
@@ -103,7 +103,7 @@ export default function SearchJob() {
                   style={{ width: "auto", height: "auto" }}
                 />
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}flipkart.svg`}
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/flipkart.svg`}
                   alt="Logo"
                   width={100}
                   height={45}
@@ -111,7 +111,7 @@ export default function SearchJob() {
                   style={{ width: "auto", height: "auto" }}
                 />
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}phonepe.svg`}
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/phonepe.svg`}
                   alt="Logo"
                   width={100}
                   height={45}
@@ -119,7 +119,7 @@ export default function SearchJob() {
                   style={{ width: "auto", height: "auto" }}
                 />
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}paytm.svg`}
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/paytm.svg`}
                   alt="Logo"
                   width={100}
                   height={45}
