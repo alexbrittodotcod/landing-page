@@ -1914,7 +1914,7 @@ export const HrResponse = () => (
   </svg>
 );
 
-export const QuotesImg = () => (
+/* export const QuotesImg = () => (
   <svg
     width="35"
     height="33"
@@ -1950,6 +1950,6 @@ export const QuotesImg = () => (
       />
     </defs>
   </svg>
-);
+); */
 
 //export const
