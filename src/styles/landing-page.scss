@@ -80,7 +80,9 @@
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(-50%); /* Move halfway through the container to make it seamless */
+    transform: translateX(
+      -50%
+    ); /* Move halfway through the container to make it seamless */
   }
 }
 
@@ -174,11 +176,28 @@
 
 .job-posts-scroll-card {
   box-shadow: 0px 0px 20px 0px #0000000d;
-  border: 1px solid #FFFFFF;
-  background: linear-gradient(180deg, #FFF6F8 -10.65%, #FFFFFF 52.82%, #FFFFFF 100%);
+  border: 1px solid #ffffff;
+  background: linear-gradient(
+    180deg,
+    #fff6f8 -10.65%,
+    #ffffff 52.82%,
+    #ffffff 100%
+  );
 }
 
 .download-card {
-  box-shadow: 0px 4px 30px 0px #E8395C26;
-  background: #FBF9F9;
+  box-shadow: 0px 4px 30px 0px #e8395c26;
+  background: #fbf9f9;
 }
+
+.testimonial-card {
+  height: 17.813rem;
+  box-shadow: 0px 10px 30px 0px #e1e1e14d;
+}
+
+.register-now-card {
+  box-shadow: 0px 7px 25px -5px #e8395c1a,
+              0px 5px 15px 0px #e8395c14,
+              0px 0px 0px 1px #e8395c0d;
+}
+

@@ -9,42 +9,42 @@ const AdOns = () => {
       title: "Career Page Integration",
       description:
         "Automatically sync your job listings to your career page and attract top talent effortlessly.",
-      image: "/addons-pg-integration.svg", // Path to image
+      image: "addons-pg-integration.svg", // Path to image
     },
     {
       id: 2,
       title: "WhatsApp Integration",
       description:
         "Automatically sync your job listings to your career page and attract top talent effortlessly.",
-      image: "/whatsapp-red-icon.svg",
+      image: "whatsapp-red-icon.svg",
     },
     {
       id: 3,
       title: "Member Management",
       description:
         "Easily manage team members, roles, and permissions to streamline collaboration on hiring.",
-      image: "/red-user-config.svg",
+      image: "red-user-config.svg",
     },
     {
       id: 4,
       title: "Career Page Integration",
       description:
         "Automatically sync your job listings to your career page and attract top talent effortlessly.",
-      image: "/addons-pg-integration.svg", // Path to image
+      image: "addons-pg-integration.svg", // Path to image
     },
     {
       id: 5,
       title: "Career Page Integration",
       description:
         "Automatically sync your job listings to your career page and attract top talent effortlessly.",
-      image: "/addons-pg-integration.svg", // Path to image
+      image: "addons-pg-integration.svg", // Path to image
     },
     {
       id: 6,
       title: "Career Page Integration",
       description:
         "Automatically sync your job listings to your career page and attract top talent effortlessly.",
-      image: "/addons-pg-integration.svg", // Path to image
+      image: "addons-pg-integration.svg", // Path to image
     },
     // Add more cards as needed
   ];

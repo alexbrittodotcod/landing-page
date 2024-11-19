@@ -5,6 +5,7 @@ import HiringProcess from "./landing-page/HiringProcess";
 import "../../styles/landing-page.scss";
 import { FormTopBar } from "@/components/icons/form-icons";
 import SuccessStories from "./landing-page/SuccessStories";
+import RegisterNowBlock from "./landing-page/RegisterNowBlock";
 
 export default function LandingPage() {
   return (
@@ -51,6 +52,14 @@ export default function LandingPage() {
 
       <section className="w-full text-center">
         <SuccessStories />
+      </section>
+
+      <section className="w-full text-center mb-[5rem] bg-[#F7F7F8]">
+        <div className="relative bg-[#F7F7F8]">
+          <div className="absolute top-0 left-0 w-full h-[20px] bg-white"></div>
+          <div className="absolute bottom-0 left-0 w-full h-[20px] bg-white"></div>
+          <RegisterNowBlock />
+        </div>
       </section>
     </main>
   );
