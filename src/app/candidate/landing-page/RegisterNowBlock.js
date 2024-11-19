@@ -8,9 +8,12 @@ import {
 export default function RegisterNowBlock() {
   return (
     <div className="max-w-5xl mx-auto flex justify-between items-center   ">
-      <div className="w-[28.313rem] p-[1.875rem] register-now-card rounded-lg bg-[url('/handshake.svg')]" style={{ backgroundColor: 'white'}}>
+      <div
+        className="w-[28.313rem] p-[1.875rem] register-now-card rounded-lg bg-[url('/handshake.svg')]"
+        style={{ backgroundColor: "white" }}
+      >
         <div className="text-left text-[1.25rem] leading-[1.931rem] text-[#493438]">
-          Trusted by Millions to Land the Perfect Job – Join India's
+          Trusted by Millions to Land the Perfect Job – Join India&apos;s
           Fastest-Growing Career Network!
         </div>
 
