@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import {
   FooterHirewalksTxt,
   FooterWhiteHirewalks,
@@ -121,73 +122,38 @@ const Footer = () => {
             © 2024 - Hirewalks. All rights reserved
           </div>
 
-          <div className="flex flex-row gap-[30px]">
-            <div className="flex flex-row gap-[20px]">
-              <motion.a
-                href="https://play.google.com/store/apps/details?id=com.hirewalks.candidates&hl=en_IN"
-                target={"_blank"}
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <img
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/Google play.svg`}
-                />
-              </motion.a>
+          <div className="flex flex-row gap-[20px] mt-[1.438rem] pb-[2.125rem] xl:justify-center">
+            <motion.a
+              href="https://play.google.com/store/apps/details?id=com.hirewalks.candidates&hl=en_IN"
+              target="_blank"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <Image
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH}/google_play.svg`}
+                alt="Google play"
+                width={135}
+                height={41}
+                className="w-full h-[2.563rem]"
+                priority
+              />
+            </motion.a>
 
-              <motion.a
-                href="https://apps.apple.com/in/app/hirewalks-job-search-app/id1613292784"
-                target={"_blank"}
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <img
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/app_store.svg`}
-                />
-              </motion.a>
-            </div>
-
-            <div className="flex flex-row items-center gap-[20px]">
-              <motion.a
-                href="https://www.facebook.com/HirewalksIndia/"
-                target={"_blank"}
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <WhiteF />
-              </motion.a>
-
-              <motion.a
-                href="https://www.youtube.com/channel/UCYSLoup61q52LFw41OKANtQ"
-                target={"_blank"}
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <WhiteYT />
-              </motion.a>
-
-              <motion.a
-                href="https://www.instagram.com/hirewalks/?hl=en"
-                target={"_blank"}
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <WhiteInstagramIcon />
-              </motion.a>
-
-              <motion.a
-                href=""
-                target={"_blank"}
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <WhiteTwitter />
-              </motion.a>
-
-              {/* <WhiteF />
-              <WhiteYT />
-              <WhiteInstagramIcon />
-              <WhiteTwitter /> */}
-            </div>
+            <motion.a
+              href="https://apps.apple.com/in/app/hirewalks-job-search-app/id1613292784"
+              target="_blank"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <Image
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH}/app_store.svg`}
+                alt="App Store"
+                width={135}
+                height={41}
+                className="w-full h-[2.563rem]"
+                priority
+              />
+            </motion.a>
           </div>
         </div>
       </div>

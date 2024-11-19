@@ -7,9 +7,9 @@ import {
 
 export default function RegisterNowBlock() {
   return (
-    <div className="max-w-5xl mx-auto flex justify-between items-center   ">
+    <div className="max-w-5xl mx-auto flex justify-between items-center  sm:flex-col ">
       <div
-        className="w-[28.313rem] p-[1.875rem] register-now-card rounded-lg bg-[url('/handshake.svg')]"
+        className="w-[28.313rem] p-[1.875rem] register-now-card rounded-lg bg-[url('/handshake.svg')] sm:w-[20rem]" 
         style={{ backgroundColor: "white" }}
       >
         <div className="text-left text-[1.25rem] leading-[1.931rem] text-[#493438]">
@@ -27,7 +27,7 @@ export default function RegisterNowBlock() {
         </button>
       </div>
 
-      <div className="grid grid-cols-3 gap-[2rem]">
+      <div className="grid grid-cols-3 gap-[2rem] z-10 sm:gap-[0.5rem] sm:mt-[1rem] xs:hidden">
         <div className="flex flex-col items-center">
           <VerifiedJobs />
 

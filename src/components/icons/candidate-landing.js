@@ -1038,7 +1038,7 @@ export const RedRightArrow = () => (
 
 export const Step1 = () => (
   <svg
-    width="243"
+    width="100%"
     height="254"
     viewBox="0 0 243 254"
     fill="none"

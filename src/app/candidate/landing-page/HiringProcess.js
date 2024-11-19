@@ -1,6 +1,13 @@
 "use client";
 
-import { AvatarUsingPhone, HrResponse, JobAlert, QuickApply, Step1, Step3 } from "@/components/icons/candidate-landing";
+import {
+  AvatarUsingPhone,
+  HrResponse,
+  JobAlert,
+  QuickApply,
+  Step1,
+  Step3,
+} from "@/components/icons/candidate-landing";
 import { useEffect, useState } from "react";
 import "../../../styles/landing-page.scss";
 import { HirewalksIcon } from "@/components/icons/common-icons";
@@ -26,7 +33,7 @@ const HiringProcess = () => {
       <div className="flex flex-row flex-wrap justify-center gap-[2.5rem] max-w-7xl">
         {/* STEP 1 */}
         <div
-          className="bg-[#212126] rounded-[1rem] p-[1.25rem] pb-0 w-[23.563rem] cursor-pointer step-1 flex flex-col justify-between"
+          className="bg-[#212126] rounded-[1rem] p-[1.25rem] pb-0 w-[23.563rem] cursor-pointer step-1 flex flex-col justify-between xs:w-[17rem]"
           style={{
             boxShadow:
               "0px 0px 0px 1px #FFFFFF06 inset, 0px 1px 0px 0px #FFFFFF06 inset",
@@ -49,7 +56,7 @@ const HiringProcess = () => {
           </div>
 
           <div className="mt-[1.326rem] h-[100%] flex flex-col items-center content-center justify-center relative">
-            <Step1 className="h-[15.625rem]" />
+            <Step1 className="h-[15.625rem] xs:w-[14rem]" />
 
             {/* w-48 h-[2.188rem] */}
             <div className="absolute bottom-[1.181rem]">
@@ -62,7 +69,7 @@ const HiringProcess = () => {
 
         {/* STEP 2 */}
         <div
-          className="bg-[#212126] rounded-[1rem] p-[1.25rem] pb-0 w-[23.563rem] cursor-pointer step-2 flex flex-col justify-between"
+          className="bg-[#212126] rounded-[1rem] p-[1.25rem] pb-0 w-[23.563rem] cursor-pointer step-2 flex flex-col justify-between xs:w-[17rem]"
           style={{
             boxShadow:
               "0px 0px 0px 1px #FFFFFF06 inset, 0px 1px 0px 0px #FFFFFF06 inset",
@@ -90,14 +97,14 @@ const HiringProcess = () => {
               alt="scanner"
               width={400} // Specify image dimensions
               height={253}
-              className="w-[full] h-[15.625rem]"
+              className="w-[full] h-[15.625rem] xs:!w-[8rem]"
             />
           </div>
         </div>
 
         {/* STEP 3 */}
         <div
-          className="bg-[#212126] rounded-[1rem] p-[1.25rem] pb-0 w-[23.563rem] cursor-pointer step-3 flex flex-col justify-between"
+          className="bg-[#212126] rounded-[1rem] p-[1.25rem] pb-0 w-[23.563rem] cursor-pointer step-3 flex flex-col justify-between xs:w-[17rem]"
           style={{
             boxShadow:
               "0px 0px 0px 1px #FFFFFF06 inset, 0px 1px 0px 0px #FFFFFF06 inset",
@@ -120,7 +127,7 @@ const HiringProcess = () => {
           </div>
 
           <div className="mt-[1.326rem] h-[100%] flex flex-col items-center content-center justify-center relative">
-            <Step3 className="h-[15.625rem]" />
+            <Step3 className="h-[15.625rem] xs:w-[8rem]" />
 
             {/* w-48 h-[2.188rem] */}
             <div className="absolute bottom-[1.5rem] left-[1.313rem]">
@@ -154,40 +161,42 @@ const HiringProcess = () => {
             </div>
 
             <div className="flex flex-row gap-[20px] mt-[1.438rem] pb-[2.125rem] xl:justify-center">
-              <motion.a
-                href="https://play.google.com/store/apps/details?id=com.hirewalks.candidates&hl=en_IN"
-                target={"_blank"}
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <Image
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/Google play.svg`}
-                  alt="Google play"
-                  width={135} // Specify image dimensions
-                  height={41}
-                  className="w-[full] h-[2.563rem]"
-                  priority
-                />
-              </motion.a>
+              <div>
+                <motion.a
+                  href="https://play.google.com/store/apps/details?id=com.hirewalks.candidates&hl=en_IN"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <Image
+                    src={`${process.env.NEXT_PUBLIC_BASE_PATH}/google_play.svg`}
+                    alt="Google Play"
+                    width={135} // Specify image dimensions
+                    height={41}
+                    className="w-full h-[2.563rem]"
+                    priority
+                  />
+                </motion.a>
+              </div>
 
-              <motion.a
-                href="https://apps.apple.com/in/app/hirewalks-job-search-app/id1613292784"
-                target={"_blank"}
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                {/* <img
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/app_store.svg`}
-                /> */}
-                <Image
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/app_store.svg`}
-                  alt="App Store"
-                  width={135} // Specify image dimensions
-                  height={41}
-                  className="w-[full] h-[2.563rem]"
-                  priority
-                />
-              </motion.a>
+              <div>
+                <motion.a
+                  href="https://apps.apple.com/in/app/hirewalks-job-search-app/id1613292784"
+                  target="_blank"
+                  rel="noopener"
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <img
+                    src={`${process.env.NEXT_PUBLIC_BASE_PATH}/app_store.svg`}
+                    alt="App Store"
+                    width={135} // Specify image dimensions
+                    height={41}
+                    className="w-full h-[2.563rem]"
+                  />
+                </motion.a>
+              </div>
             </div>
           </div>
 

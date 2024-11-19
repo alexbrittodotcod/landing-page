@@ -19,7 +19,7 @@ export default function ResumeScore() {
 
   return (
     <div className="max-w-7xl mx-auto grid justify-items-center">
-      <div className="text-[2.5rem] text-[#493438] font-extrabold leading-[3.5rem] text-center xl:whitespace-normal whitespace-nowrap lg:text-[2rem]">
+      <div className="text-[2.5rem] text-[#493438] font-extrabold leading-[3.5rem] text-center xl:whitespace-normal whitespace-nowrap lg:text-[2rem] sm:text-[2rem] sm:leading-[3rem]">
         Get Your <span className="text-theme-color">Resume Score</span> Now!
       </div>
 
@@ -37,7 +37,7 @@ export default function ResumeScore() {
         </div>
 
         <div className="candidate-resume-checker-box-shadow bg-white resume-checker-box">
-          <div className="grid grid-flow-row justify-items-center py-[1.031rem] pl-[0.925rem] pr-[3.063rem]">
+          <div className="grid grid-flow-row justify-items-center py-[1.031rem] pl-[0.925rem] pr-[3.063rem] lg:pr-[0.925rem]">
             <ResumeCheckerDomain />
             {/* <input
               type="text"
@@ -56,14 +56,17 @@ export default function ResumeScore() {
             </div>
 
             <div>
-              <div className="text-[#4B5162] text-[1.125rem] leading-[1.738rem] mt-[1.621rem]">
+              <div className="text-[#4B5162] text-[1.125rem] leading-[1.738rem] mt-[1.621rem] text-left">
                 Upload your Resume to Check the Scores 😚
               </div>
 
-              <div className="grid grid-cols-2 gap-x-[2.75rem] gap-y-4 mt-[1.063rem] w-fit">
+              <div className="grid grid-cols-2 xs:grid-cols-1 gap-x-[2.75rem] gap-y-4 mt-[1.063rem] w-fit">
                 {resumeScorePoints.map((item, index) => {
                   return (
-                    <div className="flex items-center space-x-[4px]" key={index}>
+                    <div
+                      className="flex items-center space-x-[4px]"
+                      key={index}
+                    >
                       <CheckboxCircle />
                       <div className="text-[#4B5162] text-sm leading-[1.352rem] font-normal">
                         {item.name}

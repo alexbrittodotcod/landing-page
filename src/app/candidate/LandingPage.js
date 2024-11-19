@@ -10,7 +10,7 @@ import RegisterNowBlock from "./landing-page/RegisterNowBlock";
 export default function LandingPage() {
   return (
     <main className="font-avenir flex flex-col items-center justify-center">
-      <section className="w-full text-center banner-gradient">
+      <section className="w-full text-center banner-gradient md:px-[1rem]">
         <SearchJob />
       </section>
 
@@ -42,7 +42,7 @@ export default function LandingPage() {
 
       <section className="w-full text-center">
         <FormTopBar className="w-full" />
-        <div className="bg-[#131316] pt-[4.5625rem] pb-[5.625rem] mt-[-2px]">
+        <div className="bg-[#131316] pt-[4.5625rem] pb-[5.625rem] mt-[-2px] lg:px-[1rem]">
           <HiringProcess />
         </div>
         <div className="mt-[-2px] mirror-image">

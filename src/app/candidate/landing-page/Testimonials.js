@@ -123,7 +123,7 @@ const Testimonials = () => {
         {currentTestimonials.map((testimonial, index) => (
           <div
             key={`${currentPage}-${index}`}
-            className="testimonial-card rounded-lg text-center flex flex-col justify-between"
+            className="testimonial-card rounded-lg text-center flex flex-col justify-between h-auto"
           >
             <div className="w-full p-[1.5rem]">
               <div className="flex w-full justify-between">
@@ -145,7 +145,7 @@ const Testimonials = () => {
                 />
               </div>
 
-              <div className="mt-[0.625rem] text-[#493438] text-[0.875rem] leading-[1.352rem] text-left overflow-hidden line-clamp-6">
+              <div className="mt-[0.625rem] text-[#493438] text-[0.875rem] leading-[1.352rem] text-left overflow-hidden line-clamp-6 lg:line-clamp-4">
                 {testimonial.text}
               </div>
             </div>
