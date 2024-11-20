@@ -3,6 +3,42 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { usePathname } from "next/navigation"; // Import usePathname instead of useRouter
+
+const CustomLink = ({ href, title, className = "", target }) => {
+  const [mounted, setMounted] = useState(false);
+
+  // Ensure the component is mounted before using useRouter
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const pathname = usePathname(); // Use usePathname hook to get the current path
+  console.log(pathname, "path"); // Logs the current path
+
+  if (!mounted) {
+    return null; // Optionally return null or fallback content until mounted
+  }
+
+  return (
+    <Link
+      href={href}
+      className={`${className} relative group hover:text-theme-color ${
+        pathname === href ? "text-theme-color" : ""
+      }`}
+      target={target}
+    >
+      {title}
+      {/* Uncomment this part if you need to highlight active links */}
+      {/* <span
+        className={`h-[1px] inline-block bg-theme-color absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300 ${
+          pathname === href ? "w-full" : "w-0"
+        } dark:bg-light`}
+      ></span> */}
+    </Link>
+  );
+};
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -11,6 +47,12 @@ const Header = () => {
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
+
+  const pathname = usePathname(); // Use usePathname hook to get the current path
+  // Check if the pathname starts with '/recruiter'
+  const isRecruiter = pathname.startsWith("/recruiter");
+
+  console.log(isRecruiter, "isRecruiter"); // Logs true if the path starts with '/recruiter'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,66 +116,85 @@ const Header = () => {
 
           {/* Navigation */}
           <nav className="lg:hidden">
-            <ul className="flex space-x-6 text-gray-700">
-              <li>
-                <a href="#home" className="hover:text-gray-900 transition">
-                  Overview
-                </a>
-              </li>
-              <li>
-                <a href="#about" className="hover:text-gray-900 transition">
-                  Features
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="hover:text-gray-900 transition">
-                  Pricing
-                </a>
-              </li>
-            </ul>
+            <div className="flex space-x-6 text-gray-700 text-[1rem]">
+              {isRecruiter ? (
+                <>
+                  <CustomLink href="/" title="Home" />
+                  <CustomLink href="/search-job" title="Search Job" />
+                  <CustomLink href="/resume-checker" title="Resume Checker" />
+                  <CustomLink href="/download-app" title="Download App" />
+                </>
+              ) : (
+                <>
+                  {/* Other block to show when isRecruiter is false */}
+                  <CustomLink href="/" title="Home" />
+                  <CustomLink
+                    href={`${process.env.NEXT_PUBLIC_ANGULAR_APP}/search-job`}
+                    title="Search Job"
+                    target="_blank"
+                  />
+                  <CustomLink href="/resume-checker" title="Resume Checker" />
+                  <CustomLink href="/download-app" title="Download App" />
+                </>
+              )}
+            </div>
           </nav>
 
           {/* User Actions */}
           <div className="flex items-center space-x-[24px]">
-            <div className="text-theme-color Avenir-800 hover:text-gray-900 cursor-pointer">
-              Log in
-            </div>
+            {isRecruiter ? (
+              <>
+                <div className="text-theme-color Avenir-800 hover:text-gray-900 cursor-pointer xs:text-[0.75rem]">
+                  Log in
+                </div>
 
-            <button className="bg-theme-color text-white px-[24px] py-[8px] rounded-lg hover:bg-theme-color transition">
-              Sign Up
-            </button>
+                <button className="bg-theme-color text-white px-[24px] py-[8px] rounded-lg hover:bg-theme-color transition xs:text-[0.75rem]">
+                  Sign Up
+                </button>
+              </>
+            ) : (
+              <>
+                <div className="text-theme-color Avenir-800 hover:text-gray-900 cursor-pointer xs:text-[0.75rem]">
+                  Candidate Login
+                </div>
+
+                <button className="bg-theme-color text-white px-[24px] py-[8px] rounded-lg hover:bg-theme-color transition xs:text-[0.75rem]">
+                  Employeer Login
+                </button>
+              </>
+            )}
           </div>
         </div>
 
-        {/* For small screen */}
+        {/* For small screen Navigation */}
         {isOpen ? (
           <motion.div
             initial={{ scale: 0, opacity: 0, x: "-50%", y: "-50%" }}
             animate={{ scale: 1, opacity: 1 }}
-            className="min-w-[70vw] flex flex-col justify-between z-30 items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[rgba(27,27,27,.9)] rounded-lg backdrop-blur py-32"
+            className="min-w-[15rem] flex flex-col justify-between z-30 items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[rgba(27,27,27,.9)] rounded-lg backdrop-blur py-16"
           >
-            <nav>
-              <ul className="flex-col text-white text-[1.5rem]">
-                <li>
-                  <a href="#home" className="hover:text-gray-900 transition">
-                    Overview
-                  </a>
-                </li>
-                <li>
-                  <a href="#about" className="hover:text-gray-900 transition">
-                    Features
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#services"
-                    className="hover:text-gray-900 transition"
-                  >
-                    Pricing
-                  </a>
-                </li>
-              </ul>
-            </nav>
+            <div className="text-[1rem] text-white flex flex-col items-center">
+              {isRecruiter ? (
+                <>
+                  <CustomLink href="/" title="Home" />
+                  <CustomLink href="/search-job" title="Search Job" />
+                  <CustomLink href="/resume-checker" title="Resume Checker" />
+                  <CustomLink href="/download-app" title="Download App" />
+                </>
+              ) : (
+                <>
+                  {/* Other block to show when isRecruiter is false */}
+                  <CustomLink href="/" title="Home" />
+                  <CustomLink
+                    href={`${process.env.NEXT_PUBLIC_ANGULAR_APP}/search-job`}
+                    title="Search Job"
+                    target="_blank"
+                  />
+                  <CustomLink href="/resume-checker" title="Resume Checker" />
+                  <CustomLink href="/download-app" title="Download App" />
+                </>
+              )}
+            </div>
           </motion.div>
         ) : null}
       </header>
