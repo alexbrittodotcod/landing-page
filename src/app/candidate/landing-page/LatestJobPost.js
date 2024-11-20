@@ -1,10 +1,16 @@
+"use client";
 import {
   RightArrow,
   RedRightArrow,
 } from "@/components/icons/candidate-landing";
 import Image from "next/image";
+import { jobs } from "../../utils/apiEndpoints"; // Import the endpoints
+import { useEffect, useState } from "react";
+import { getRequest } from "@/app/utils/api";
 
 export default function LatestJobPost() {
+  const [jobPosts, setJobPosts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false); // Loading state to manage API call status
   const JobPosts = [
     { job_name: "Angular Developer", company: "Hirewalks Pvt Ltd." },
     {
@@ -18,6 +24,24 @@ export default function LatestJobPost() {
     },
   ];
 
+  const jobPostsFetcher = async () => {
+    setIsLoading(true); // Show loading indicator when fetching suggestions
+
+    try {
+      // Fetch the suggestions from the API based on the current keyword
+      const result = await getRequest(`${jobs.searchJobs}?limit=20&skip=0`);
+      setJobPosts(result.data || []); // Set the suggestions in state
+    } catch (error) {
+      setJobPosts([]); // Reset suggestions on error
+    } finally {
+      setIsLoading(false); // Hide loading indicator after fetching
+    }
+  };
+
+  useEffect(() => {
+    jobPostsFetcher();
+  }, [jobs.searchJobs]);
+
   return (
     <>
       <div className="max-w-7xl mx-auto grid justify-items-center">
@@ -25,7 +49,10 @@ export default function LatestJobPost() {
           Our Latest <span className="text-theme-color">Jobs Post</span>
         </div>
 
-        <div className="text-[#493438] text-base font-normal leading-[1.545rem]">
+        <div
+          className="text-[#493438] text-base font-normal leading-[1.545rem]"
+          onClick={jobPostsFetcher}
+        >
           Discover the newest job opportunities posted across various
           industries.
         </div>

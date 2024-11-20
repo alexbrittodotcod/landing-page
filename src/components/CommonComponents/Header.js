@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation"; // Import usePathname instead of useRouter
+import { useRouter } from "next/navigation";
 
 const CustomLink = ({ href, title, className = "", target }) => {
   const [mounted, setMounted] = useState(false);
@@ -15,7 +16,7 @@ const CustomLink = ({ href, title, className = "", target }) => {
   }, []);
 
   const pathname = usePathname(); // Use usePathname hook to get the current path
-  console.log(pathname, "path"); // Logs the current path
+  //console.log(pathname, "path"); // Logs the current path
 
   if (!mounted) {
     return null; // Optionally return null or fallback content until mounted
@@ -52,7 +53,7 @@ const Header = () => {
   // Check if the pathname starts with '/recruiter'
   const isRecruiter = pathname.startsWith("/recruiter");
 
-  console.log(isRecruiter, "isRecruiter"); // Logs true if the path starts with '/recruiter'
+  //console.log(isRecruiter, "isRecruiter"); // Logs true if the path starts with '/recruiter'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -70,6 +71,13 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const router = useRouter();
+
+  /* const navigateToHome = () => {
+     router.push("/");
+     //window.location.pathname = "/";
+  }; */
 
   return (
     <>
@@ -102,7 +110,11 @@ const Header = () => {
             </button>
 
             {/* Logo */}
-            <div className="text-xl font-bold xs:hidden">
+            <div
+              className="text-xl font-bold cursor-pointer xs:hidden"
+              onClick={() => router.push("/")}
+            >
+              {/* <Link href="/"> */}
               <Image
                 src={`${process.env.NEXT_PUBLIC_BASE_PATH}/HW Red logo - Main Logo.svg`}
                 alt="HW Logo"
@@ -111,6 +123,7 @@ const Header = () => {
                 height={40} // Set the height as a reference
                 priority
               />
+              {/* </Link> */}
             </div>
           </div>
 
@@ -133,8 +146,8 @@ const Header = () => {
                     title="Search Job"
                     target="_blank"
                   />
-                  <CustomLink href="/resume-checker" title="Resume Checker" />
-                  <CustomLink href="/download-app" title="Download App" />
+                  <CustomLink href="#resume-checker" title="Resume Checker" />
+                  <CustomLink href="#download-app" title="Download App" />
                 </>
               )}
             </div>
@@ -154,11 +167,27 @@ const Header = () => {
               </>
             ) : (
               <>
-                <div className="text-theme-color Avenir-800 hover:text-gray-900 cursor-pointer xs:text-[0.75rem]">
+                <div
+                  className="text-theme-color Avenir-800 hover:text-red-600 cursor-pointer xs:text-[0.75rem]"
+                  onClick={() =>
+                    window.open(
+                      `${process.env.NEXT_PUBLIC_ANGULAR_APP}/candidate-login`,
+                      "_blank"
+                    )
+                  }
+                >
                   Candidate Login
                 </div>
 
-                <button className="bg-theme-color text-white px-[24px] py-[8px] rounded-lg hover:bg-theme-color transition xs:text-[0.75rem]">
+                <button
+                  className="bg-theme-color text-white px-[24px] py-[8px] rounded-lg hover:bg-red-600 transition xs:text-[0.75rem]"
+                  onClick={() =>
+                    window.open(
+                      `${process.env.NEXT_PUBLIC_ANGULAR_APP}/recruiter-login`,
+                      "_blank"
+                    )
+                  }
+                >
                   Employeer Login
                 </button>
               </>
@@ -190,8 +219,8 @@ const Header = () => {
                     title="Search Job"
                     target="_blank"
                   />
-                  <CustomLink href="/resume-checker" title="Resume Checker" />
-                  <CustomLink href="/download-app" title="Download App" />
+                  <CustomLink href="#resume-checker" title="Resume Checker" />
+                  <CustomLink href="#download-app" title="Download App" />
                 </>
               )}
             </div>

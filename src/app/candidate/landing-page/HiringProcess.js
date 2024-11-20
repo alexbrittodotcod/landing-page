@@ -140,7 +140,7 @@ const HiringProcess = () => {
       </div>
 
       {/* Download Hirewalks row */}
-      <div className="max-w-7xl px-[2rem]">
+      <div className="max-w-7xl px-[2rem]" id="download-app">
         <div className="download-card grid grid-cols-3 xl:grid-cols-1 rounded-[1rem] w-full pt-[1.75rem] pl-[2.876rem] sm:pt-[15px] sm:pl-[15px] sm:p-[15px]">
           <div>
             <HirewalksIcon />

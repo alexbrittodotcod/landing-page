@@ -1,7 +1,69 @@
-import { SearchJobLens, SearchJobLocation } from "@/components/icons/form-icons";
+"use client";
+import {
+  SearchJobLens,
+  SearchJobLocation,
+} from "@/components/icons/form-icons";
 import Image from "next/image";
+import { jobs } from "../../utils/apiEndpoints"; // Import the endpoints
+import { useEffect, useState } from "react";
+import { getRequest } from "@/app/utils/api";
 
 export default function SearchJob() {
+  const [keyword, setKeyword] = useState(""); // State to hold the input value
+  const [suggestions, setSuggestions] = useState([]); // State to hold the dropdown suggestions
+  const [isLoading, setIsLoading] = useState(false); // Loading state to manage API call status
+  const [isSelecting, setIsSelecting] = useState(false); // New flag to handle selectionsuggestion
+
+  /* const fetchData = async () => {
+     if (keyword.trim()) {
+       try {
+         const result = await getRequest(
+           `${jobs.searchJobs}?keywords=${keyword}`
+         );
+         setData(result);
+         console.log(result);
+       } catch (error) {
+         console.error("Error fetching data", error);
+       }
+     }
+   }; */
+  useEffect(() => {
+    const fetchSuggestions = async () => {
+      if (isSelecting || keyword.trim().length === 0) {
+        setIsSelecting(false); // Reset the flag
+        return;
+      }
+
+      setIsLoading(true); // Show loading indicator when fetching suggestions
+
+      try {
+        // Fetch the suggestions from the API based on the current keyword
+        const result = await getRequest(
+          `${jobs.searchSuggestions}?keywords=${keyword}`
+        );
+        
+        setSuggestions(result.data || []); // Set the suggestions in state
+      } catch (error) {
+        console.error("Error fetching suggestions", error);
+        setSuggestions([]); // Reset suggestions on error
+      } finally {
+        setIsLoading(false); // Hide loading indicator after fetching
+      }
+    };
+
+    const timeoutId = setTimeout(() => {
+      fetchSuggestions(); // Fetch suggestions after a delay
+    }, 300); // Debounce time (300ms)
+
+    return () => clearTimeout(timeoutId); // Cleanup on input change
+  }, [keyword]); // Re-run the effect whenever the keyword changes
+
+  const handleSuggestionClick = (suggestion) => {
+    setKeyword(suggestion.keywords); // Set the selected suggestion in the input
+    setSuggestions([]); // Clear suggestions
+    setIsSelecting(true); // Set the flag to true
+  };
+
   return (
     <div className="avenir-regular bg-[url('/header-bg.svg')] header-linear-bg">
       <div className="flex justify-center max-w-7xl mx-auto w-[100%]">
@@ -17,11 +79,35 @@ export default function SearchJob() {
               {/* <!-- Search Input --> */}
               <div className="flex items-center flex-grow mr-[1.5rem]">
                 <SearchJobLens />
-                <input
-                  type="text"
-                  placeholder="Search for Software Developer"
-                  className="flex-grow border-none outline-none bg-transparent text-gray-500 pl-2 placeholder-gray-400 w-[15rem]"
-                />
+                <div className="relative w-full">
+                  <input
+                    type="text"
+                    value={keyword}
+                    onChange={(e) => setKeyword(e.target.value)}
+                    placeholder="Search for Software Developer"
+                    className="flex-grow border-none outline-none bg-transparent text-gray-500 pl-2 placeholder-gray-400 w-[15rem]"
+                  />
+                  {isLoading && (
+                    <div className="absolute top-full left-0 w-full p-2 bg-white text-center text-gray-500">
+                      Loading...
+                    </div>
+                  )}
+                  {suggestions.length > 0 && (
+                    <div className="absolute top-full left-0 w-full bg-white border border-gray-300 rounded-lg shadow-md z-10 text-left">
+                      <ul className="max-h-60 overflow-y-auto">
+                        {suggestions.map((suggestion, index) => (
+                          <li
+                            key={suggestion._id}
+                            className="p-2 cursor-pointer hover:bg-gray-200"
+                            onClick={() => handleSuggestionClick(suggestion)}
+                          >
+                            {suggestion.keywords}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
               </div>
 
               <div className="relative md:hidden">

@@ -1,5 +1,5 @@
 import "../styles/globals.scss";
-import Header from "../components/CommonComponents/Header";
+import Header from "../components/CommonComponents/Header.js";
 import Footer from "../components/CommonComponents/Footer";
 import Head from "next/head";
 
