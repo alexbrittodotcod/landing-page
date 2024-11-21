@@ -272,8 +272,8 @@ export default function SearchJob() {
           <div className="flex flex-row sm:flex-col items-center space-x-4 sm:space-y-2 text-gray-500 text-sm mx-[0.5rem] sm:items-start sm:space-x-0">
             <span>Most Searched Jobs:</span>
             <div className="flex flex-wrap space-x-2 sm:space-x-0">
-              {mostSearchedJobs.map((job) => (
-                <div className="bg-white text-gray-700 px-3 py-1 rounded-full shadow my-1 cursor-pointer hover:bg-[#FFEDF0]" onClick={() => mostSearchJob(job.name)}>
+              {mostSearchedJobs.map((job, index) => (
+                <div className="bg-white text-gray-700 px-3 py-1 rounded-full shadow my-1 cursor-pointer hover:bg-[#FFEDF0]" onClick={() => mostSearchJob(job.name)} key={index}>
                   {job.name}
                 </div>
               ))}
