@@ -27,30 +27,30 @@ export default function SearchJob() {
        }
      }
    }; */
+  const fetchSuggestions = async () => {
+    if (isSelecting || keyword.trim().length === 0) {
+      setIsSelecting(false); // Reset the flag
+      return;
+    }
+
+    setIsLoading(true); // Show loading indicator when fetching suggestions
+
+    try {
+      // Fetch the suggestions from the API based on the current keyword
+      const result = await getRequest(
+        `${jobs.searchSuggestions}?keywords=${keyword}`
+      );
+
+      setSuggestions(result.data || []); // Set the suggestions in state
+    } catch (error) {
+      console.error("Error fetching suggestions", error);
+      setSuggestions([]); // Reset suggestions on error
+    } finally {
+      setIsLoading(false); // Hide loading indicator after fetching
+    }
+  };
+  
   useEffect(() => {
-    const fetchSuggestions = async () => {
-      if (isSelecting || keyword.trim().length === 0) {
-        setIsSelecting(false); // Reset the flag
-        return;
-      }
-
-      setIsLoading(true); // Show loading indicator when fetching suggestions
-
-      try {
-        // Fetch the suggestions from the API based on the current keyword
-        const result = await getRequest(
-          `${jobs.searchSuggestions}?keywords=${keyword}`
-        );
-        
-        setSuggestions(result.data || []); // Set the suggestions in state
-      } catch (error) {
-        console.error("Error fetching suggestions", error);
-        setSuggestions([]); // Reset suggestions on error
-      } finally {
-        setIsLoading(false); // Hide loading indicator after fetching
-      }
-    };
-
     const timeoutId = setTimeout(() => {
       fetchSuggestions(); // Fetch suggestions after a delay
     }, 300); // Debounce time (300ms)
@@ -135,13 +135,13 @@ export default function SearchJob() {
           <div className="flex flex-row sm:flex-col items-center space-x-4 sm:space-y-2 text-gray-500 text-sm mx-[0.5rem] sm:items-start sm:space-x-0">
             <span>Most Searched Jobs:</span>
             <div className="flex flex-wrap space-x-2 sm:space-x-0">
-              <div className="bg-white text-gray-700 px-3 py-1 rounded-full shadow my-1 sm:mr-[0.5rem]">
+              <div className="bg-white text-gray-700 px-3 py-1 rounded-full shadow my-1 sm:mr-[0.5rem] cursor-pointer hover:bg-[#FFEDF0]">
                 Angular Developer
               </div>
-              <div className="bg-white text-gray-700 px-3 py-1 rounded-full shadow my-1">
+              <div className="bg-white text-gray-700 px-3 py-1 rounded-full shadow my-1 cursor-pointer hover:bg-[#FFEDF0]">
                 UX Design
               </div>
-              <div className="bg-white text-gray-700 px-3 py-1 rounded-full shadow my-1">
+              <div className="bg-white text-gray-700 px-3 py-1 rounded-full shadow my-1 cursor-pointer hover:bg-[#FFEDF0]">
                 Digital Marketing
               </div>
             </div>

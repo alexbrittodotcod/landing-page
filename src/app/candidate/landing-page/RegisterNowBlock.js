@@ -1,3 +1,4 @@
+'use client';
 import {
     HrInterviewIcon,
   ResponseMessage,
@@ -9,7 +10,7 @@ export default function RegisterNowBlock() {
   return (
     <div className="max-w-5xl mx-auto flex justify-between items-center  sm:flex-col ">
       <div
-        className="w-[28.313rem] p-[1.875rem] register-now-card rounded-lg bg-[url('/handshake.svg')] sm:w-[20rem]" 
+        className="w-[28.313rem] p-[1.875rem] register-now-card rounded-lg bg-[url('/handshake.svg')] sm:w-[20rem]"
         style={{ backgroundColor: "white" }}
       >
         <div className="text-left text-[1.25rem] leading-[1.931rem] text-[#493438]">
@@ -17,7 +18,15 @@ export default function RegisterNowBlock() {
           Fastest-Growing Career Network!
         </div>
 
-        <button className="py-[0.5rem] px-[1rem] rounded-lg bg-theme-color text-white text-[0.75rem] font-bold flex items-center justify-center mt-[1.563rem]">
+        <button
+          className="py-[0.5rem] px-[1rem] rounded-lg bg-theme-color text-white text-[0.75rem] font-bold flex items-center justify-center mt-[1.563rem] hover:bg-red-600"
+          onClick={() =>
+            window.open(
+              `${process.env.NEXT_PUBLIC_ANGULAR_APP}/candidate-register`,
+              "_blank"
+            )
+          }
+        >
           <div className="flex flex-row gap-[0.5rem] items-center">
             <div>Register Now</div>
             <div>

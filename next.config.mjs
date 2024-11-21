@@ -5,6 +5,11 @@ const nextConfig = {
   reactStrictMode: true,
   // Enables detailed source maps in development
   productionBrowserSourceMaps: true,
+
+  // Add the domain for images
+  images: {
+    domains: ["hirewalks-dev.s3.amazonaws.com"], // Add your required domain here
+  },
 };
 
 export default nextConfig;

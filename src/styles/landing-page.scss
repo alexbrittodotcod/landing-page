@@ -71,7 +71,7 @@
 .scroll-left-to-right {
   display: flex; /* Ensures smooth horizontal scrolling */
   width: fit-content; /* Adjusts the container width to content */
-  animation: scroll-left-to-right 100s linear infinite; /* Left-to-right scrolling */
+  animation: scroll-left-to-right 60s linear infinite; /* Left-to-right scrolling */
   white-space: nowrap; /* Prevents line breaks */
 }
 
@@ -175,6 +175,7 @@
 }
 
 .job-posts-scroll-card {
+  cursor: pointer;
   box-shadow: 0px 0px 20px 0px #0000000d;
   border: 1px solid #ffffff;
   background: linear-gradient(

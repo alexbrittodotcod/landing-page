@@ -21,8 +21,10 @@ export default function LandingPage() {
         <ResumeScore />
       </section>
 
-      <section className="w-full text-center py-[4.375rem] bg-[url('/header-bg.svg')] header-linear-bg">
+      <section className="w-full text-center pt-[4.375rem] bg-[url('/header-bg.svg')] header-linear-bg">
         <LatestJobPost />
+
+        <FormTopBar className="w-full" />
       </section>
 
       {/* <section className="mb-[3.75rem] w-full relative">
@@ -44,7 +46,6 @@ export default function LandingPage() {
       </section> */}
 
       <section className="w-full text-center">
-        <FormTopBar className="w-full" />
         <div className="bg-[#131316] pt-[4.5625rem] pb-[5.625rem] mt-[-2px] lg:px-[1rem]">
           <HiringProcess />
         </div>

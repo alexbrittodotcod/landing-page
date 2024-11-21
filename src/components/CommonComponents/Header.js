@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation"; // Import usePathname instead of useRouter
 import { useRouter } from "next/navigation";
+import { DropDownIcon, LookingForJobIcon } from "../icons/form-icons";
 
 const CustomLink = ({ href, title, className = "", target }) => {
   const [mounted, setMounted] = useState(false);
@@ -30,7 +31,27 @@ const CustomLink = ({ href, title, className = "", target }) => {
       }`}
       target={target}
     >
-      {title}
+      <div className="flex items-center">
+        <div>{title}</div>
+
+        {/* 1. Looking for a Job icon*/}
+        {title == "Looking for a Job" ? (
+          <div className="ml-[6px] mt-[2px]">
+            <LookingForJobIcon />
+          </div>
+        ) : (
+          ""
+        )}
+
+        {/* 1. Features*/}
+        {title == "Features" ? (
+          <div className="ml-[6px] mt-[3px]">
+            <DropDownIcon />
+          </div>
+        ) : (
+          ""
+        )}
+      </div>
       {/* Uncomment this part if you need to highlight active links */}
       {/* <span
         className={`h-[1px] inline-block bg-theme-color absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300 ${
@@ -133,9 +154,10 @@ const Header = () => {
               {isRecruiter ? (
                 <>
                   <CustomLink href="/" title="Home" />
-                  <CustomLink href="/search-job" title="Search Job" />
-                  <CustomLink href="/resume-checker" title="Resume Checker" />
-                  <CustomLink href="/download-app" title="Download App" />
+                  <CustomLink href="/search-job" title="Features" />
+                  <CustomLink href="/search-job" title="Pricing" />
+                  <CustomLink href="/resume-checker" title="Download App" />
+                  <CustomLink href="/download-app" title="Looking for a Job" />
                 </>
               ) : (
                 <>
@@ -157,11 +179,27 @@ const Header = () => {
           <div className="flex items-center space-x-[24px]">
             {isRecruiter ? (
               <>
-                <div className="text-theme-color Avenir-800 hover:text-gray-900 cursor-pointer xs:text-[0.75rem]">
+                <div
+                  className="text-theme-color Avenir-800 hover:text-gray-900 cursor-pointer xs:text-[0.75rem]"
+                  onClick={() =>
+                    window.open(
+                      `${process.env.NEXT_PUBLIC_ANGULAR_APP}/recruiter-login`,
+                      "_blank"
+                    )
+                  }
+                >
                   Log in
                 </div>
 
-                <button className="bg-theme-color text-white px-[24px] py-[8px] rounded-lg hover:bg-theme-color transition xs:text-[0.75rem]">
+                <button
+                  className="bg-theme-color text-white px-[24px] py-[8px] rounded-lg transition xs:text-[0.75rem] hover:bg-red-600"
+                  onClick={() =>
+                    window.open(
+                      `${process.env.NEXT_PUBLIC_ANGULAR_APP}/recruiter-registration`,
+                      "_blank"
+                    )
+                  }
+                >
                   Sign Up
                 </button>
               </>
@@ -206,9 +244,10 @@ const Header = () => {
               {isRecruiter ? (
                 <>
                   <CustomLink href="/" title="Home" />
-                  <CustomLink href="/search-job" title="Search Job" />
-                  <CustomLink href="/resume-checker" title="Resume Checker" />
-                  <CustomLink href="/download-app" title="Download App" />
+                  <CustomLink href="/search-job" title="Features" />
+                  <CustomLink href="/search-job" title="Pricing" />
+                  <CustomLink href="/resume-checker" title="Download App" />
+                  <CustomLink href="/download-app" title="Looking for a Job" />
                 </>
               ) : (
                 <>

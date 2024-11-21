@@ -38,22 +38,28 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col mt-[1.75rem] gap-[12px]">
-            <div className="flex flex-row gap-[3.5px] items-center">
+            <div className="flex flex-row gap-[3.5px] items-center hover:text-theme-color cursor-pointer">
               <div>
                 <WhitePhoneIcon />
               </div>
-              <div className="text-[1rem] leading-[1.545rem]">
+              <a
+                href="tel:+917907933430"
+                className="text-[1rem] leading-[1.545rem]"
+              >
                 +91 79079-33430
-              </div>
+              </a>
             </div>
 
-            <div className="flex flex-row gap-[3.5px] items-center">
+            <div className="flex flex-row gap-[10px] items-center hover:text-theme-color cursor-pointer">
               <div>
                 <WhiteEmailIcon />
               </div>
-              <div className="text-[1rem] leading-[1.545rem] mb-[4px]">
-                 support@hirewalks.com
-              </div>
+              <a
+                href="mailto:support@hirewalks.com"
+                className="text-[1rem] leading-[1.545rem] mb-[4px]"
+              >
+                support@hirewalks.com
+              </a>
             </div>
           </div>
 
@@ -76,7 +82,17 @@ const Footer = () => {
               <li className="text-[1rem] font-normal">Privacy Policy</li>
               <li className="text-[1rem] font-normal">Terms & Conditions</li>
               <li className="text-[1rem] font-normal">Refund Policy</li>
-              <li className="text-[1rem] font-normal">Contact Us</li>
+              <li
+                className="text-[1rem] font-normal cursor-pointer hover:text-theme-color"
+                onClick={() =>
+                  window.open(
+                    `${process.env.NEXT_PUBLIC_ANGULAR_APP}/info/contact-us`,
+                    "_blank"
+                  )
+                }
+              >
+                Contact Us
+              </li>
               <li className="text-[1rem] font-normal">Product Pricing</li>
             </ul>
           </div>
@@ -86,12 +102,72 @@ const Footer = () => {
               Jobs by Location
             </div>
             <ul className="space-y-[10px] mt-[1rem]">
-              <li className="text-[1rem] font-normal">Jobs in Bangalore</li>
-              <li className="text-[1rem] font-normal">Jobs in Chennai</li>
-              <li className="text-[1rem] font-normal">Jobs in Coimbatore</li>
-              <li className="text-[1rem] font-normal">Jobs in Kochi</li>
-              <li className="text-[1rem] font-normal">Jobs in Pune</li>
-              <li className="text-[1rem] font-normal">Jobs in Mumbai</li>
+              <li
+                className="text-[1rem] font-normal cursor-pointer hover:text-theme-color"
+                onClick={() =>
+                  window.open(
+                    `${process.env.NEXT_PUBLIC_ANGULAR_APP}/search-job?loc=Bangalore`,
+                    "_blank"
+                  )
+                }
+              >
+                Jobs in Bangalore
+              </li>
+              <li
+                className="text-[1rem] font-normal cursor-pointer hover:text-theme-color"
+                onClick={() =>
+                  window.open(
+                    `${process.env.NEXT_PUBLIC_ANGULAR_APP}/search-job?loc=Chennai`,
+                    "_blank"
+                  )
+                }
+              >
+                Jobs in Chennai
+              </li>
+              <li
+                className="text-[1rem] font-normal cursor-pointer hover:text-theme-color"
+                onClick={() =>
+                  window.open(
+                    `${process.env.NEXT_PUBLIC_ANGULAR_APP}/search-job?loc=Coimbatore`,
+                    "_blank"
+                  )
+                }
+              >
+                Jobs in Coimbatore
+              </li>
+              <li
+                className="text-[1rem] font-normal cursor-pointer hover:text-theme-color"
+                onClick={() =>
+                  window.open(
+                    `${process.env.NEXT_PUBLIC_ANGULAR_APP}/search-job?loc=Kochi`,
+                    "_blank"
+                  )
+                }
+              >
+                Jobs in Kochi
+              </li>
+              <li
+                className="text-[1rem] font-normal cursor-pointer hover:text-theme-color"
+                onClick={() =>
+                  window.open(
+                    `${process.env.NEXT_PUBLIC_ANGULAR_APP}/search-job?loc=Pune`,
+                    "_blank"
+                  )
+                }
+              >
+                Jobs in Pune
+              </li>
+              <li
+                className="text-[1rem] font-normal cursor-pointer hover:text-theme-color"
+                onClick={() =>
+                  window.open(
+                    `${process.env.NEXT_PUBLIC_ANGULAR_APP}/search-job?loc=Mumbai`,
+                    "_blank"
+                  )
+                }
+              >
+                Jobs in Mumbai
+              </li>
             </ul>
           </div>
 

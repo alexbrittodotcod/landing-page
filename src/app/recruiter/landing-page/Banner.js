@@ -1,5 +1,5 @@
+'use client';
 //import "./globals.css";
-
 import Image from "next/image";
 import bannerGif from "../../../../public/banner-img.gif";
 
@@ -36,7 +36,7 @@ const Banner = () => {
           </div>
 
           <div className="flex gap-5 pt-[1.875rem]">
-            <button className="w-48 h-12 py-2 px-4 rounded-lg bg-theme-color text-white text-sm font-bold flex items-center justify-center gap-2">
+            <button className="w-48 h-12 py-2 px-4 rounded-lg bg-theme-color text-white text-sm font-bold flex items-center justify-center gap-2 hover:bg-red-600">
               Request a Demo
               <Image
                 src={`${process.env.NEXT_PUBLIC_BASE_PATH}/white-stars.svg`}
@@ -48,7 +48,15 @@ const Banner = () => {
               />
             </button>
 
-            <button className="text-sm font-bold text-theme-color border border-theme-color rounded-lg px-[2.063rem]">
+            <button
+              className="text-sm font-bold text-theme-color border border-theme-color rounded-lg px-[2.063rem] hover:bg-[#FFECF0]"
+              onClick={() =>
+                window.open(
+                  `${process.env.NEXT_PUBLIC_ANGULAR_APP}/recruiter-registration`,
+                  "_blank"
+                )
+              }
+            >
               Signup Now
             </button>
           </div>

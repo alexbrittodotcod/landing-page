@@ -60,7 +60,15 @@ const HiringProcess = () => {
 
             {/* w-48 h-[2.188rem] */}
             <div className="absolute bottom-[1.181rem]">
-              <button className="w-fit py-[0.5rem] px-[1rem] rounded-lg bg-theme-color text-white text-[0.75rem] font-bold flex items-center justify-center">
+              <button
+                className="w-fit py-[0.5rem] px-[1rem] rounded-lg bg-theme-color text-white text-[0.75rem] font-bold flex items-center justify-center hover:bg-red-600"
+                onClick={() =>
+                  window.open(
+                    `${process.env.NEXT_PUBLIC_ANGULAR_APP}/candidate-register`,
+                    "_blank"
+                  )
+                }
+              >
                 Sign up for Free
               </button>
             </div>
@@ -131,7 +139,15 @@ const HiringProcess = () => {
 
             {/* w-48 h-[2.188rem] */}
             <div className="absolute bottom-[1.5rem] left-[1.313rem]">
-              <button className="w-fit py-[0.5rem] px-[1rem] rounded-lg bg-theme-color text-white text-[0.75rem] font-bold flex items-center justify-center">
+              <button
+                className="w-fit py-[0.5rem] px-[1rem] rounded-lg bg-theme-color text-white text-[0.75rem] font-bold flex items-center justify-center hover:bg-red-600"
+                onClick={() =>
+                  window.open(
+                    `${process.env.NEXT_PUBLIC_ANGULAR_APP}/search-job`,
+                    "_blank"
+                  )
+                }
+              >
                 Apply Now
               </button>
             </div>
