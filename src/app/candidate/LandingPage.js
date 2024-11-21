@@ -14,12 +14,12 @@ export default function LandingPage() {
         <SearchJob />
       </section>
 
-      <section
+      {/* <section
         className="w-full text-center bg-[url('/bg-stripes.svg')] mt-[3.75rem] mb-[3.75rem] px-[1rem]"
         id="resume-checker"
       >
         <ResumeScore />
-      </section>
+      </section> */}
 
       <section className="w-full text-center pt-[4.375rem] bg-[url('/header-bg.svg')] header-linear-bg">
         <LatestJobPost />

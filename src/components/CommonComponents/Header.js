@@ -139,7 +139,7 @@ const Header = () => {
               <Image
                 src={`${process.env.NEXT_PUBLIC_BASE_PATH}/HW Red logo - Main Logo.svg`}
                 alt="HW Logo"
-                layout="responsive"
+                layout="intrinsic"
                 width={133} // Set the width as a reference
                 height={40} // Set the height as a reference
                 priority
@@ -168,7 +168,7 @@ const Header = () => {
                     title="Search Job"
                     target="_blank"
                   />
-                  <CustomLink href="#resume-checker" title="Resume Checker" />
+                  {/* <CustomLink href="#resume-checker" title="Resume Checker" /> */}
                   <CustomLink href="#download-app" title="Download App" />
                 </>
               )}
@@ -258,7 +258,7 @@ const Header = () => {
                     title="Search Job"
                     target="_blank"
                   />
-                  <CustomLink href="#resume-checker" title="Resume Checker" />
+                  {/* <CustomLink href="#resume-checker" title="Resume Checker" /> */}
                   <CustomLink href="#download-app" title="Download App" />
                 </>
               )}
