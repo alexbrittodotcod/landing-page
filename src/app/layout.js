@@ -2,6 +2,7 @@ import "../styles/globals.scss";
 import Header from "../components/CommonComponents/Header.js";
 import Footer from "../components/CommonComponents/Footer";
 import Head from "next/head";
+import { Toaster, toast } from "react-hot-toast";
 
 export const metadata = {
   title: "Hirewalks",
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
         <Header />
         <div className="flex-grow">{children}</div>
         <Footer />
+        <Toaster />
       </body>
     </html>
   );

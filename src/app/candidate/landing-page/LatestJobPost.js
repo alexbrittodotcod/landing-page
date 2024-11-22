@@ -14,18 +14,6 @@ export default function LatestJobPost() {
   const [forwardJobPosts, setForwardJobPosts] = useState([]);
   const [backwardJobPosts, setBackwardJobPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(false); // Loading state to manage API call status
-  const JobPosts = [
-    { job_name: "Angular Developer", company: "Hirewalks Pvt Ltd." },
-    {
-      job_name: "Flutter Developer",
-      company: "Infosight Consulting Services Pvt Ltd.",
-    },
-    { job_name: "Angular Developer", company: "Hirewalks Pvt Ltd." },
-    {
-      job_name: "Flutter Developer",
-      company: "Infosight Consulting Services Pvt Ltd.",
-    },
-  ];
 
   const jobPostsFetcher = async () => {
     setIsLoading(true); // Show loading indicator when fetching suggestions

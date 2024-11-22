@@ -21,6 +21,7 @@
     "react-circular-progressbar": "^2.1.0",
     "react-dom": "^18",
     "react-dropzone": "^14.3.5",
+    "react-hot-toast": "^2.4.1",
     "react-lottie": "^1.2.4",
     "react-router-dom": "^6.28.0",
     "sass": "^1.80.3",

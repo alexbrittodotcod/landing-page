@@ -16,6 +16,15 @@ module.exports = {
         foreground: "var(--foreground)",
         "theme-color": "rgba(232, 57, 92, 1)",
       },
+      animation: {
+        blink: 'blink 1.2s infinite both',
+      },
+      keyframes: {
+        blink: {
+          '0%, 80%, 100%': { opacity: '0' },
+          '40%': { opacity: '1' },
+        },
+      }
     },
     screens: {
       "2xl": { max: "1535px" },

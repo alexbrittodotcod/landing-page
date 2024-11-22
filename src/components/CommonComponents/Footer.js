@@ -78,10 +78,50 @@ const Footer = () => {
             </div>
 
             <ul className="space-y-[10px] mt-[1rem]">
-              <li className="text-[1rem] font-normal">About Us</li>
-              <li className="text-[1rem] font-normal">Privacy Policy</li>
-              <li className="text-[1rem] font-normal">Terms & Conditions</li>
-              <li className="text-[1rem] font-normal">Refund Policy</li>
+              <li
+                className="text-[1rem] font-normal cursor-pointer hover:text-theme-color"
+                onClick={() =>
+                  window.open(
+                    `${process.env.NEXT_PUBLIC_ANGULAR_APP}/info/about-us`,
+                    "_blank"
+                  )
+                }
+              >
+                About Us
+              </li>
+              <li
+                className="text-[1rem] font-normal cursor-pointer hover:text-theme-color"
+                onClick={() =>
+                  window.open(
+                    `${process.env.NEXT_PUBLIC_ANGULAR_APP}/info/privacy-policy`,
+                    "_blank"
+                  )
+                }
+              >
+                Privacy Policy
+              </li>
+              <li
+                className="text-[1rem] font-normal cursor-pointer hover:text-theme-color"
+                onClick={() =>
+                  window.open(
+                    `${process.env.NEXT_PUBLIC_ANGULAR_APP}/info/termsconditions`,
+                    "_blank"
+                  )
+                }
+              >
+                Terms & Conditions
+              </li>
+              <li
+                className="text-[1rem] font-normal cursor-pointer hover:text-theme-color"
+                onClick={() =>
+                  window.open(
+                    `${process.env.NEXT_PUBLIC_ANGULAR_APP}/info/refund-policy`,
+                    "_blank"
+                  )
+                }
+              >
+                Refund Policy
+              </li>
               <li
                 className="text-[1rem] font-normal cursor-pointer hover:text-theme-color"
                 onClick={() =>

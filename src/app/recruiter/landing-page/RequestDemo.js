@@ -2,10 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 import { FormTopBar } from "@/components/icons/form-icons";
+import { postRequest } from "@/app/utils/api";
+import { jobs, master } from "@/app/utils/apiEndpoints";
+import { Toaster, toast } from "react-hot-toast";
 
 // components/Footer.js
 const HiringProcess = () => {
-  const [selectedValue, setSelectedValue] = useState("");
+  //const [selectedValue, setSelectedValue] = useState("");
+  const [loading, setLoading] = useState(false);
   const reviewPoints = [
     {
       review:
@@ -40,6 +44,15 @@ time and resources for hiring. Everything changed when I partnered with HireWalk
   ];
   const firstContainerRef = useRef(null);
   const secondContainerRef = useRef(null);
+  const [inputs, setInputs] = useState({
+    name: "",
+    email: "",
+    mobile_number: "",
+    role: 1,
+    inquiry: 8,
+    company_name: "",
+    reason: "",
+  });
 
   useEffect(() => {
     const firstContainer = firstContainerRef.current;
@@ -63,6 +76,34 @@ time and resources for hiring. Everything changed when I partnered with HireWalk
 
     return () => clearInterval(scrollInterval);
   }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      console.log(inputs);
+      const result = await postRequest(`${master.postContactData}`, inputs);
+
+      if (result) {
+        setInputs({
+          name: "",
+          email: "",
+          mobile_number: "",
+          role: 1,
+          inquiry: 8,
+          company_name: "",
+          reason: "",
+        });
+        setLoading(true);
+        toast.success(result.msg);
+      }
+    } catch (error) {
+      console.error("Error from API", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="grid place-items-center">
@@ -125,19 +166,22 @@ time and resources for hiring. Everything changed when I partnered with HireWalk
             </div>
           </div>
 
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="mb-4">
               <label
-                htmlFor="username"
+                htmlFor="name"
                 className="flex text-[#9394A1] text-[0.875rem] leading-[1.35rem] mb-[8px]"
               >
-                Name
+                Name <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
-                id="username"
+                id="name"
+                required
                 className="w-full px-4 py-2 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-theme-color focus:border-transparent bg-[#131316]"
                 placeholder="What should we call you?"
+                value={inputs.name}
+                onChange={(e) => setInputs({ ...inputs, name: e.target.value })}
               />{" "}
             </div>
 
@@ -146,47 +190,81 @@ time and resources for hiring. Everything changed when I partnered with HireWalk
                 htmlFor="email"
                 className="flex text-[#9394A1] text-[0.875rem] leading-[1.35rem] mb-[8px]"
               >
-                Work Email
+                Work Email <span className="text-red-500">*</span>
               </label>
               <input
-                type="text"
-                id="username"
+                type="email"
+                id="email"
                 className="w-full px-4 py-2 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-theme-color focus:border-transparent bg-[#131316]"
                 placeholder="Your work email, please."
+                value={inputs.email}
+                onChange={(e) =>
+                  setInputs({ ...inputs, email: e.target.value })
+                }
+                required
               />{" "}
             </div>
 
             <div className="mb-4">
               <label
-                htmlFor="username"
+                htmlFor="company_name"
                 className="flex text-[#9394A1] text-[0.875rem] leading-[1.35rem] mb-[8px]"
               >
-                Company Name
+                Company Name <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
-                id="username"
+                id="company_name"
                 className="w-full px-4 py-2 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-theme-color focus:border-transparent bg-[#131316]"
                 placeholder="Where do you work?"
+                value={inputs.company_name}
+                onChange={(e) =>
+                  setInputs({ ...inputs, company_name: e.target.value })
+                }
+                required
               />{" "}
             </div>
 
             <div className="mb-4">
               <label
-                htmlFor="username"
+                htmlFor="mobile_number"
                 className="flex text-[#9394A1] text-[0.875rem] leading-[1.35rem] mb-[8px]"
               >
-                Phone Number
+                Phone Number <span className="text-red-500">*</span>
               </label>
               <input
-                type="text"
-                id="username"
+                type="number"
+                id="mobile_number"
                 className="w-full px-4 py-2 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-theme-color focus:border-transparent bg-[#131316]"
                 placeholder="Number to reach you."
+                value={inputs.mobile_number}
+                onChange={(e) =>
+                  setInputs({ ...inputs, mobile_number: e.target.value })
+                }
+                required
               />{" "}
             </div>
 
             <div className="mb-4">
+              <label
+                htmlFor="reason"
+                className="flex text-[#9394A1] text-[0.875rem] leading-[1.35rem] mb-[8px]"
+              >
+                Reason <span className="text-red-500">*</span>
+              </label>
+              <textarea
+                id="reason"
+                required
+                className="w-full px-4 py-2 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-theme-color focus:border-transparent bg-[#131316]"
+                placeholder="Please provide your reason"
+                value={inputs.reason}
+                onChange={(e) =>
+                  setInputs({ ...inputs, reason: e.target.value })
+                }
+              />
+            </div>
+
+            {/* <div className="mb-4">
               <label
                 htmlFor="role"
                 className="flex text-[#9394A1] text-[0.875rem] leading-[1.35rem] mb-[8px]"
@@ -207,11 +285,25 @@ time and resources for hiring. Everything changed when I partnered with HireWalk
                 <option value="designer">Designer</option>
                 <option value="other">Other</option>
               </select>
-            </div>
+            </div> */}
 
             <div className="pt-[12px]">
-              <button className="w-full h-12 py-2 px-4 rounded-lg bg-theme-color text-white text-sm font-bold flex items-center justify-center gap-2 ">
-                Get a Demo
+              <button
+                className={`w-full h-12 py-2 px-4 rounded-lg bg-theme-color text-white text-sm font-bold flex items-center justify-center gap-2 ${
+                  loading ? "cursor-not-allowed" : ""
+                }`}
+                disabled={loading}
+                type="submit"
+              >
+                {loading ? (
+                  <span className="flex items-center gap-2">
+                    <span className="dot bg-white animate-blink w-[0.7rem] h-[0.7rem] rounded-full"></span>
+                    <span className="dot bg-white animate-blink delay-150 w-[0.7rem] h-[0.7rem] rounded-full"></span>
+                    <span className="dot bg-white animate-blink delay-300 w-[0.7rem] h-[0.7rem] rounded-full"></span>
+                  </span>
+                ) : (
+                  "Get a Demo"
+                )}
               </button>
             </div>
           </form>

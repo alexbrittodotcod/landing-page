@@ -22,6 +22,7 @@ export const jobs = {
 
 export const master = {
   getLocations: `${NEXT_PUBLIC_MASTER_BASE_PATH}/v1/locations`,
+  postContactData: `${NEXT_PUBLIC_MASTER_BASE_PATH}/v2/contact/`,
 };
 
 // Add other endpoint groups if needed
